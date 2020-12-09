@@ -14,7 +14,7 @@ const authCheck = (req, res, next) => {
     User.findById(decoded.id).then((user) => {
       if (!user) res.status(403).send("Unauthenticated");
       else next();
-    }).catch(err => console.log(err, "Eroor"))
+    }).catch(err => console.log(err, "Error"))
 }
 
 router.get("/properties", (req, res) => {
@@ -25,8 +25,14 @@ router.get("/properties", (req, res) => {
 
 router.post("/properties", authCheck, (req, res, next) => {
   Property.create(req.body)
-    .then(property => res.send("New Property Submitted"))
+    .then(res => res.send("New Property Submitted"))
     .catch(err => res.status(500).send("Submission Error", err))
+})
+
+router.put("/properties", authCheck, (req, res, next) => {
+  Property.findOneAndUpdate(req.body)
+    .then(res => res.send("Property Updated"))
+    .catch(err => console.log("Update Submission Error", err))
 })
 
 router.get("/properties/:id", (req, res) => {
