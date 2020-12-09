@@ -28,10 +28,10 @@ router.post("/properties", (req, res) => {
 })
 
 router.get("/properties/:id", (req, res) => {
-  Recipe.findById(req.params.id)
-    .then(recipe => {
-      if (!recipe) res.status(404).json({ message: "No such recipe" });
-      else res.json(recipe);
+  Property.findById(req.params.id)
+    .then(property => {
+      if (!property) res.status(404).json({ message: "No matching property found" });
+      else res.json(property);
     })
     .catch(err => {
       res.status(500).json({ message: "Route Error", error: err });
