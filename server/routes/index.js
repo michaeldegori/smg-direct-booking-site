@@ -18,13 +18,24 @@ const Property = require('../models/Property')
 router.get("/properties", (req, res) => {
   Property.find()
     .then(properties => res.status(200).json(properties))
-    .catch(err => res.status(500).json({ message: "Route Error" }));
+    .catch(err => res.status(500).json({ message: "Route Error", error: err  }));
 });
 
 router.post("/properties", (req, res) => {
   Property.create(req.body)
     .then(property => res.send("New Property Submitted"))
-    .catch(err => res.status(500).send("Submission Error"))
+    .catch(err => res.status(500).send("Submission Error", err))
 })
+
+router.get("/properties/:id", (req, res) => {
+  Recipe.findById(req.params.id)
+    .then(recipe => {
+      if (!recipe) res.status(404).json({ message: "No such recipe" });
+      else res.json(recipe);
+    })
+    .catch(err => {
+      res.status(500).json({ message: "Route Error", error: err });
+    });
+});
 
 module.exports = router;
