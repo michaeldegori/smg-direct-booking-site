@@ -2,18 +2,20 @@ const express = require('express');
 const router = express.Router();
 const Property = require('../models/Property')
 
-// router.use((req, res, next) => {
-//   let token = req.headers.authorization.split(" ")[1];
+const authCheck = () => {
+  router.use((req, res, next) => {
+    let token = req.headers.authorization.split(" ")[1];
 
-//   if (!token) return res.status(403).send("Unauthenticated");
-//   var decoded = jwt.verify(token, "shhhhh");
-//   if (!decoded) res.status(403).send("Unauthenticated");
+    if (!token) return res.status(403).send("Unauthenticated");
+    var decoded = jwt.verify(token, "shhhhh");
+    if (!decoded) res.status(403).send("Unauthenticated");
 
-//   User.findById(decoded.id).then((user) => {
-//     if (!user) res.status(403).send("Unauthenticated");
-//     else next();
-//   });
-// });
+    User.findById(decoded.id).then((user) => {
+      if (!user) res.status(403).send("Unauthenticated");
+      else next();
+    });
+  });
+}
 
 router.get("/properties", (req, res) => {
   Property.find()
