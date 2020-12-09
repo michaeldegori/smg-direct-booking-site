@@ -17,4 +17,4 @@ const propertySchema = new Schema({
   cancellationPolicy: String
 });
 
-module.exports = mongoose.model("Property", userSchema, "properties");
+module.exports = mongoose.model("Property", propertySchema, "properties");
