@@ -22,6 +22,9 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.options("*", cors());
+app.use(cors());
+app.use(bodyParser.json());
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
@@ -41,5 +44,19 @@ app.use((err, req, res, next) => {
   res.status(err.status || 500);
   res.render('error');
 });
+
+// begin using Mongoose
+mongoose
+  .connect(MONGODB_URI, {
+    useCreateIndex: true,
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  })
+  .then(self => {
+    console.log(`Connected to the database: "${self.connection.name}"`);
+  })
+  .catch(err => {
+    console.log("err", err);
+  });
 
 module.exports = app;
