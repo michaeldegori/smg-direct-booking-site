@@ -1,20 +1,20 @@
 const express = require('express');
 const router = express.Router();
-const Property = require('../models/Property')
+const Property = require('../models/Property');
+const User = require('../models/User')
+const jwt = require('jsonwebtoken');
 
-const authCheck = () => {
-  router.use((req, res, next) => {
-    let token = req.headers.authorization.split(" ")[1];
+const authCheck = (req, res, next) => {
+    let token = req.headers?.authorization?.split(" ")[1];
 
     if (!token) return res.status(403).send("Unauthenticated");
-    var decoded = jwt.verify(token, "shhhhh");
+    const decoded = jwt.verify(token, "SQn!.JF#rG9D5,a>;+_m-hwKWB<S.#($xV^YQQ+KLxSrc{@qvjq(GLC!Cy<q})^");
     if (!decoded) res.status(403).send("Unauthenticated");
 
     User.findById(decoded.id).then((user) => {
       if (!user) res.status(403).send("Unauthenticated");
       else next();
-    });
-  });
+    }).catch(err => console.log(err, "Eroor"))
 }
 
 router.get("/properties", (req, res) => {
@@ -23,7 +23,7 @@ router.get("/properties", (req, res) => {
     .catch(err => res.status(500).json({ message: "Route Error", error: err  }));
 });
 
-router.post("/properties", (req, res) => {
+router.post("/properties", authCheck, (req, res, next) => {
   Property.create(req.body)
     .then(property => res.send("New Property Submitted"))
     .catch(err => res.status(500).send("Submission Error", err))
