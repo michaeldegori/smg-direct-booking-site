@@ -54,91 +54,82 @@ const EditProperty = (props) => {
         <input
           type="file"
           name="photos"
-          placeholder={propertyEdit.photos}
+          placeholder="photos"
           value={propertyEdit.photos}
           onChange={handleChange}
         />
         <input
           type="number"
           name="bedrooms"
-          placeholder={propertyEdit.bedrooms}
+          placeholder="# of bedrooms"
           value={propertyEdit.bedrooms}
           onChange={handleChange}
         />
         <input
           type="number"
           name="bathrooms"
-          placeholder={propertyEdit.bathrooms}
+          placeholder="# of bathrooms"
           value={propertyEdit.bathrooms}
           onChange={handleChange}
         />
         <input
-          type="text"
           name="listingTitle"
-          placeholder={propertyEdit.listingTitle}
+          placeholder="listing title"
           value={propertyEdit.listingTitle}
           onChange={handleChange}
         />
-        <input
-          type="textarea"
+        <textarea
           name="description"
-          placeholder={propertyEdit.description}
+          placeholder="description"
           value={propertyEdit.description}
           onChange={handleChange}
         />
         <input
           type="number"
           name="maxGuests"
-          placeholder={propertyEdit.maxGuests}
+          placeholder="max # of guests"
           value={propertyEdit.maxGuests}
           onChange={handleChange}
         />
         <input
-          type="text"
           name="address"
-          placeholder={propertyEdit.address}
+          placeholder="address"
           value={propertyEdit.address}
           onChange={handleChange}
         />
-        <input
-          type="text"
+        <textarea
           name="directions"
-          placeholder={propertyEdit.directions}
+          placeholder="directions"
           value={propertyEdit.directions}
           onChange={handleChange}
         />
-        <input
-          type="textarea"
+        <textarea
           name="checkinInstructions"
-          placeholder={propertyEdit.checkinInstructions}
+          placeholder="checkin instructions"
           value={propertyEdit.checkinInstructions}
           onChange={handleChange}
         />
-        <input
-          type="textarea"
+        <textarea
           name="wifiDetails"
-          placeholder={propertyEdit.wifiDetails}
+          placeholder="wifi info"
           value={propertyEdit.wifiDetails}
           onChange={handleChange}
         />
         <input
-          type="text"
           name="houseManual"
-          placeholder={propertyEdit.houseManual}
+          placeholder="house manual link"
           value={propertyEdit.houseManual}
           onChange={handleChange}
         />
-        <input
-          type="textarea"
+        <textarea
           name="houseRules"
-          placeholder={propertyEdit.houseRules}
+          placeholder="house rules"
           value={propertyEdit.houseRules}
           onChange={handleChange}
         />
         <input
-          type="text"
           name="cancellationPolicy"
-          placeholder={propertyEdit.cancellationPolicy}
+          placeholder="cancellation policy"
           value={propertyEdit.cancellationPolicy}
           onChange={handleChange}
         />
