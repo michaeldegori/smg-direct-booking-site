@@ -1,6 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
+import Axios from 'axios';
+import useHistory from 'react-router-dom';
 
 const Login = () => {
+  const history = useHistory();
+
   const [userLogin, setUserLogin] = useState({
     email: '',
     password: '',
@@ -19,6 +23,7 @@ const Login = () => {
     Axios.post('http://localhost:3000/users/login', userLogin)
       .then((response) => {
         console.log('User logged in!');
+        history.push(`/properties`);
       })
       .catch((err) => {
         console.log(err);
@@ -41,6 +46,7 @@ const Login = () => {
           value={userLogin.password}
           onChange={handleChange}
         />
+        <button type="submit">Login</button>
       </form>
     </div>
   );
