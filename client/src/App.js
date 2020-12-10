@@ -1,7 +1,8 @@
 import './App.css';
 import React from 'react';
-import { NavLink, Link, Switch, Route } from 'react-router-dom';
+import { Redirect, NavLink, Link, Switch, Route } from 'react-router-dom';
 import Home from './components/Home';
+import PropertyDetails from './components/PropertyDetails';
 
 function App() {
   return (
@@ -9,8 +10,15 @@ function App() {
       <Link to="/home">Home</Link>
 
       <Switch>
+        <Route exact path="/">
+          <Redirect to="/home" />
+        </Route>
         <Route exact path="/home" render={(props) => <Home {...props} />} />
-        {/* <Route exact path="/properties/:id" render={(props) => <PropertyDetails {...props} />} /> */}
+        <Route
+          exact
+          path="/properties/:id"
+          render={(props) => <PropertyDetails {...props} />}
+        />
       </Switch>
     </div>
   );
