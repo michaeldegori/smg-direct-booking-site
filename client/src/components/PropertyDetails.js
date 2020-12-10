@@ -16,7 +16,7 @@ const PropertyDetails = (props) => {
   return (
     <div>
       <h1>{property?.listingTitle}</h1>
-      <Link to={`/properties/edit/${property?._id}`}></Link>
+      <Link to={`/properties/edit/${property?._id}`}>Edit Property</Link>
     </div>
   );
 };

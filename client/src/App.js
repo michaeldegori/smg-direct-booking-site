@@ -5,6 +5,7 @@ import Home from './components/Home';
 import Properties from './components/Properties';
 import PropertyDetails from './components/PropertyDetails';
 import Login from './components/Login';
+import EditProperty from './components/EditProperty';
 
 function App() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -112,6 +113,11 @@ function App() {
           exact
           path="/users/login"
           render={(props) => <Login {...props} />}
+        />
+        <Route
+          exact
+          path="/properties/edit/:id"
+          render={(props) => <EditProperty {...props} />}
         />
       </Switch>
     </div>
