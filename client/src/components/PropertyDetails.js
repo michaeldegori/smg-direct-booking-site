@@ -6,7 +6,7 @@ const PropertyDetails = (props) => {
   const [property, setProperty] = useState();
 
   useEffect(() => {
-    Axios.get(`http://localhost:3000/movie/${props.match.params.id}`).then(
+    Axios.get(`http://localhost:3000/properties/${props.match.params.id}`).then(
       (res) => {
         setProperty(res.data);
       }
