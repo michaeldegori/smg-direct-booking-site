@@ -13,7 +13,12 @@ const PropertyDetails = (props) => {
     );
   }, []);
 
-  return <div></div>;
+  return (
+    <div>
+      <h1>{property.title}</h1>
+      <Link to={`/properties/edit/${property._id}`}></Link>
+    </div>
+  );
 };
 
 export default PropertyDetails;
