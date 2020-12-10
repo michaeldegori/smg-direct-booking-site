@@ -16,7 +16,7 @@ const Properties = (props) => {
       return (
         <div>
           <h1>{property.listingTitle}</h1>
-          <Link to={`/property/${property._id}`}>View Property</Link>
+          <Link to={`/properties/${property._id}`}>View Property</Link>
         </div>
       );
     });
