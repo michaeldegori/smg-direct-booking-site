@@ -25,12 +25,9 @@ const EditProperty = (props) => {
     api
       .get(`http://localhost:3000/properties/${props.match.params.id}`)
       .then((res) => {
-        debugger;
         setPropertyEdit(res.data);
       })
-      .catch((err) => {
-        debugger;
-      });
+      .catch((err) => {});
   }, []);
 
   const handleChange = (event) => {
@@ -42,7 +39,6 @@ const EditProperty = (props) => {
 
   const submitEditProperty = (event) => {
     event.preventDefault();
-    debugger;
     api
       .put(`http://localhost:3000/properties/${propertyEdit._id}`, propertyEdit)
       .then((res) => {
