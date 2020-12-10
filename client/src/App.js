@@ -4,6 +4,7 @@ import { Redirect, NavLink, Link, Switch, Route } from 'react-router-dom';
 import Home from './components/Home';
 import Properties from './components/Properties';
 import PropertyDetails from './components/PropertyDetails';
+import Login from './components/Login';
 
 function App() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -81,7 +82,7 @@ function App() {
           Contact Us
         </NavLink>
         <NavLink
-          to="/login"
+          to="/users/login"
           id="login-link"
           className="nav-links"
           ref={contactRef}
@@ -106,6 +107,11 @@ function App() {
           exact
           path="/properties/:id"
           render={(props) => <PropertyDetails {...props} />}
+        />
+        <Route
+          exact
+          path="/users/login"
+          render={(props) => <Login {...props} />}
         />
       </Switch>
     </div>
