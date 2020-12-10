@@ -1,12 +1,12 @@
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
 const createError = require('http-errors');
 const express = require('express');
 const path = require('path');
 const cookieParser = require('cookie-parser');
-const bodyParser = require("body-parser");
-const MONGODB_URI = "mongodb://localhost:27017/smg-direct-booking-site";
+const bodyParser = require('body-parser');
+const MONGODB_URI = 'mongodb://localhost:27017/smg-direct-booking-site';
 const logger = require('morgan');
-const cors = require("cors");
+const cors = require('cors');
 
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
@@ -22,7 +22,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-app.options("*", cors());
+app.options('*', cors());
 app.use(cors());
 app.use(bodyParser.json());
 
@@ -52,11 +52,11 @@ mongoose
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
-  .then(self => {
+  .then((self) => {
     console.log(`Connected to the database: "${self.connection.name}"`);
   })
-  .catch(err => {
-    console.log("err", err);
+  .catch((err) => {
+    console.log('err', err);
   });
 
 module.exports = app;

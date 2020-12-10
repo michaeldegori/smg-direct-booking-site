@@ -9,7 +9,7 @@ const Properties = (props) => {
     Axios.get('http://localhost:3000/properties')
       .then((res) => setProperties(res.data))
       .catch((err) => console.log(err));
-  });
+  }, []);
 
   const listProperties = () => {
     return properties?.map((property) => {

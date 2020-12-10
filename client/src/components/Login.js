@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import Axios from 'axios';
-import useHistory from 'react-router-dom';
+import api from '../services/api';
+import { useHistory } from 'react-router-dom';
 
 const Login = () => {
   const history = useHistory();
@@ -20,7 +20,8 @@ const Login = () => {
   const loginUser = (event) => {
     event.preventDefault();
 
-    Axios.post('http://localhost:3000/users/login', userLogin)
+    api
+      .post('http://localhost:3000/users/login', userLogin)
       .then((response) => {
         console.log('User logged in!');
         history.push(`/properties`);

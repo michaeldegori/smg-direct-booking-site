@@ -1,13 +1,20 @@
 import './App.css';
 import React, { useState, useRef } from 'react';
-import { Redirect, NavLink, Link, Switch, Route } from 'react-router-dom';
+import {
+  Redirect,
+  NavLink,
+  Link,
+  Switch,
+  Route,
+  useHistory,
+} from 'react-router-dom';
 import Home from './components/Home';
 import Properties from './components/Properties';
 import PropertyDetails from './components/PropertyDetails';
 import Login from './components/Login';
 import EditProperty from './components/EditProperty';
 
-function App() {
+const App = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const menuBtnRef = useRef();
   const navLinksRef = useRef();
@@ -16,6 +23,13 @@ function App() {
   const aboutRef = useRef();
   const propertiesRef = useRef();
   const contactRef = useRef();
+  const history = useHistory();
+
+  const logout = () => {
+    openCloseMenu();
+    localStorage.removeItem('token');
+    history.push('/home');
+  };
 
   const openCloseMenu = () => {
     if (!menuOpen) {
@@ -92,6 +106,16 @@ function App() {
         >
           Login
         </NavLink>
+        <NavLink
+          to="/users/login"
+          id="logout-link"
+          className="nav-links"
+          ref={contactRef}
+          activeClassName="highlight"
+          onClick={logout}
+        >
+          Logout
+        </NavLink>
       </nav>
 
       <Switch>
@@ -122,6 +146,6 @@ function App() {
       </Switch>
     </div>
   );
-}
+};
 
 export default App;

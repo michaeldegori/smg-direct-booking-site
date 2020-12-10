@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import Axios from 'axios';
+import api from '../services/api';
+import { useHistory } from 'react-router-dom';
 
 const EditProperty = (props) => {
+  const history = useHistory();
+
   const [propertyEdit, setPropertyEdit] = useState({
     photos: '',
     bedrooms: 0,
@@ -19,11 +22,15 @@ const EditProperty = (props) => {
   });
 
   useEffect(() => {
-    Axios.get(`http://localhost:3000/properties/${props.match.params.id}`).then(
-      (res) => {
+    api
+      .get(`http://localhost:3000/properties/${props.match.params.id}`)
+      .then((res) => {
+        debugger;
         setPropertyEdit(res.data);
-      }
-    );
+      })
+      .catch((err) => {
+        debugger;
+      });
   }, []);
 
   const handleChange = (event) => {
@@ -35,12 +42,11 @@ const EditProperty = (props) => {
 
   const submitEditProperty = (event) => {
     event.preventDefault();
-
-    Axios.put(
-      `http://localhost:3000/properties/${propertyEdit._id}`,
-      propertyEdit
-    )
+    debugger;
+    api
+      .put(`http://localhost:3000/properties/${propertyEdit._id}`, propertyEdit)
       .then((res) => {
+        history.push(`/properties/${propertyEdit._id}`);
         console.log('Property Updated');
       })
       .catch((err) => {
