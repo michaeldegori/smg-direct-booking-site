@@ -1,2 +1,13 @@
-/* font-family: 'Noto Serif', serif;
-font-family: 'Poppins', sans-serif; */
+/* font-family: 'Abril Fatface', serif;
+font-family: 'Judson', serif;
+font-family: 'Montserrat', sans-serif;
+font-family: 'Hijrnotes PERSONAL USE ONLY', cursive; */
+
+* {
+  font-family: 'Montserrat', sans-serif;
+}
+
+nav,
+form {
+  text-transform: uppercase;
+}

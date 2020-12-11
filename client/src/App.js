@@ -15,107 +15,95 @@ import Login from './components/Login';
 import EditProperty from './components/EditProperty';
 
 const App = () => {
-  const [menuOpen, setMenuOpen] = useState(false);
-  // const menuBtnRef = useRef();
-  // const navLinksRef = useRef();
-  // const menuBackgroundRef = useRef();
-  const homeRef = useRef();
-  const aboutRef = useRef();
-  const propertiesRef = useRef();
-  const contactRef = useRef();
+  const [hamburgerActive, setHamburgerActive] = useState(false);
   const history = useHistory();
 
+  const toggleHambuger = () => {
+    setHamburgerActive(!hamburgerActive);
+  };
+
   const logout = () => {
-    openCloseMenu();
+    toggleHambuger();
     localStorage.removeItem('token');
     history.push('/home');
   };
 
-  const openCloseMenu = () => {
-    if (!menuOpen) {
-      // menuBtnRef.current.classList.add('open');
-      // navLinksRef.current.classList.add('open');
-      // menuBackgroundRef.current.classList.add('open');
-      homeRef.current.classList.add('open');
-      propertiesRef.current.classList.add('open');
-      aboutRef.current.classList.add('open');
-      contactRef.current.classList.add('open');
-      setMenuOpen(true);
-    } else {
-      // menuBtnRef.current.classList.remove('open');
-      // navLinksRef.current.classList.remove('open');
-      // menuBackgroundRef.current.classList.remove('open');
-      homeRef.current.classList.remove('open');
-      propertiesRef.current.classList.remove('open');
-      aboutRef.current.classList.remove('open');
-      contactRef.current.classList.remove('open');
-      setMenuOpen(false);
-    }
-  };
-
   return (
     <div className="App">
-      <nav>
-        <NavLink
-          to="/home"
-          id="home-link"
-          className="nav-links"
-          ref={homeRef}
-          activeClassName="highlight"
-          onClick={openCloseMenu}
-        >
-          Home
+      <nav className="navbar navbar-expand-lg navbar-light bg-light">
+        <NavLink to="/home" className="navbar-brand">
+          SMG
         </NavLink>
-        <NavLink
-          to="/properties"
-          id="properties-link"
-          className="nav-links"
-          ref={propertiesRef}
-          activeClassName="highlight"
-          onClick={openCloseMenu}
+        <button
+          onClick={toggleHambuger}
+          className="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
         >
-          Our Properties
-        </NavLink>
-        <NavLink
-          to="/about"
-          id="about-link"
-          className="nav-links"
-          ref={aboutRef}
-          activeClassName="highlight"
-          onClick={openCloseMenu}
+          <span className="navbar-toggler-icon"></span>
+        </button>
+        <div
+          className={`${!hamburgerActive && 'collapse'} navbar-collapse`}
+          id="navbarNav"
         >
-          About Us
-        </NavLink>
-        <NavLink
-          to="/contact"
-          id="skills-link"
-          className="nav-links"
-          ref={contactRef}
-          activeClassName="highlight"
-          onClick={openCloseMenu}
-        >
-          Contact Us
-        </NavLink>
-        <NavLink
-          to="/users/login"
-          id="login-link"
-          className="nav-links"
-          ref={contactRef}
-          activeClassName="highlight"
-          onClick={openCloseMenu}
-        >
-          Login
-        </NavLink>
-        <NavLink
-          to="/users/login"
-          id="logout-link"
-          className="nav-links"
-          ref={contactRef}
-          activeClassName="highlight"
-          onClick={logout}
-        >
-          Logout
-        </NavLink>
+          <ul className={`${hamburgerActive && 'show'} navbar-nav`}>
+            <li className="nav-item active">
+              <NavLink
+                to="/home"
+                className="nav-link"
+                activeClassName="highlight"
+                onClick={toggleHambuger}
+              >
+                Home
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink
+                to="/properties"
+                className="nav-link"
+                activeClassName="highlight"
+                onClick={toggleHambuger}
+              >
+                Our Properties
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink
+                to="/about"
+                className="nav-link"
+                activeClassName="highlight"
+                onClick={toggleHambuger}
+              >
+                About Us
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink
+                to="/users/login"
+                id="login-link"
+                className="nav-link"
+                activeClassName="highlight"
+                onClick={toggleHambuger}
+              >
+                Login
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink
+                to="/home"
+                className="nav-link"
+                activeClassName="highlight"
+                onClick={logout}
+              >
+                Logout
+              </NavLink>
+            </li>
+          </ul>
+        </div>
       </nav>
 
       <Switch>
