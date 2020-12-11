@@ -1,8 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
 import api from '../services/api';
 import '../styles/Home.css';
 
 const Home = () => {
+  const [buttonActivity, setButtonActivity] = useState({
+    checkin: false,
+    checkout: false,
+    guests: false,
+  });
+
+  const handleButtonClick = (event) => {
+    setButtonActivity({
+      [event.target.name]: true,
+    });
+  };
+
   return (
     <div className="home">
       <div className="title-container container jumbotron">
@@ -13,14 +25,29 @@ const Home = () => {
             Getaways
           </h1>
         </div>
-        <div className="btn-group btn-group-lg" role="group">
-          <button type="button" class="btn btn-default">
+        <div className="btn-group btn-group-lg">
+          <button
+            type="button"
+            name="checkin"
+            className={`btn btn-light ${buttonActivity.checkin && 'active'}`}
+            onClick={handleButtonClick}
+          >
             Checkin
           </button>
-          <button type="button" class="btn btn-default">
+          <button
+            type="button"
+            name="checkout"
+            className={`btn btn-light ${buttonActivity.checkout && 'active'}`}
+            onClick={handleButtonClick}
+          >
             Checkout
           </button>
-          <button type="button" class="btn btn-default">
+          <button
+            type="button"
+            name="guests"
+            className={`btn btn-light ${buttonActivity.guests && 'active'}`}
+            onClick={handleButtonClick}
+          >
             Guests
           </button>
         </div>
