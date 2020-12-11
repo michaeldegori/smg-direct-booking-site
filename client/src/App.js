@@ -16,9 +16,9 @@ import EditProperty from './components/EditProperty';
 
 const App = () => {
   const [menuOpen, setMenuOpen] = useState(false);
-  const menuBtnRef = useRef();
-  const navLinksRef = useRef();
-  const menuBackgroundRef = useRef();
+  // const menuBtnRef = useRef();
+  // const navLinksRef = useRef();
+  // const menuBackgroundRef = useRef();
   const homeRef = useRef();
   const aboutRef = useRef();
   const propertiesRef = useRef();
