@@ -1,11 +1,24 @@
 .title-container {
-  height: 60vh;
-  background-image: url('../images/smoky-background.jpg');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+  margin-top: 3.75rem;
 }
 
 .home h1 {
-  font-family: 'Abril Fatface', serif;
+  font-family: 'Rock Salt', cursive;
+  color: #f5f9f7;
+  text-align: center;
+  font-size: 13vmin;
+  line-height: 16vmin;
+  margin: 27vmin 0 15vmin;
+}
+
+.forms {
+  background-color: #f5f9f748;
+  border-radius: 0.3rem;
+  padding: 0.5rem 1.2rem 0;
+}
+
+.forms label {
+  font-weight: 500;
+  color: #f5f9f7;
+  margin: 0;
 }

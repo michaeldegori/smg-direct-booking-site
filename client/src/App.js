@@ -13,6 +13,10 @@ import Properties from './components/Properties';
 import PropertyDetails from './components/PropertyDetails';
 import Login from './components/Login';
 import EditProperty from './components/EditProperty';
+import cabinGlyph from './images/cabin-glyph.png';
+import contactGlyph from './images/contact-glyph.png';
+import aboutGlyph from './images/about-glyph.png';
+import background from './images/smoky-background.jpg';
 
 const App = () => {
   const [hamburgerActive, setHamburgerActive] = useState(false);
@@ -30,7 +34,7 @@ const App = () => {
 
   return (
     <div className="App">
-      <nav className="navbar navbar-expand-lg navbar-light bg-light">
+      <nav className="navbar navbar-expand-lg navbar-light">
         <NavLink to="/home" className="navbar-brand">
           SMG
         </NavLink>
@@ -106,32 +110,59 @@ const App = () => {
         </div>
       </nav>
 
+      <div className="background-wrapper">
+        <img src={background} alt="smoky mountains background" />
+      </div>
+
       <Switch>
-        <Route exact path="/">
-          <Redirect to="/home" />
-        </Route>
-        <Route exact path="/home" render={(props) => <Home {...props} />} />
-        <Route
-          exact
-          path="/properties"
-          render={(props) => <Properties {...props} />}
-        />
-        <Route
-          exact
-          path="/properties/:id"
-          render={(props) => <PropertyDetails {...props} />}
-        />
-        <Route
-          exact
-          path="/users/login"
-          render={(props) => <Login {...props} />}
-        />
-        <Route
-          exact
-          path="/properties/edit/:id"
-          render={(props) => <EditProperty {...props} />}
-        />
+        <body>
+          <Route exact path="/">
+            <Redirect to="/home" />
+          </Route>
+          <Route exact path="/home" render={(props) => <Home {...props} />} />
+          <Route
+            exact
+            path="/properties"
+            render={(props) => <Properties {...props} />}
+          />
+          <Route
+            exact
+            path="/properties/:id"
+            render={(props) => <PropertyDetails {...props} />}
+          />
+          <Route
+            exact
+            path="/users/login"
+            render={(props) => <Login {...props} />}
+          />
+          <Route
+            exact
+            path="/properties/edit/:id"
+            render={(props) => <EditProperty {...props} />}
+          />
+        </body>
       </Switch>
+
+      <footer>
+        <div className="footer-icon-container">
+          <Link to="/properties">
+            <img src={cabinGlyph} alt="properties" />
+            <h4>PROPERTIES</h4>
+          </Link>
+        </div>
+        <div className="footer-icon-container">
+          <Link to="/about">
+            <img src={aboutGlyph} alt="about us" />
+            <h4>ABOUT</h4>
+          </Link>
+        </div>
+        <div className="footer-icon-container">
+          <Link to="/contact">
+            <img src={contactGlyph} alt="contact us" />
+            <h4>CONTACT</h4>
+          </Link>
+        </div>
+      </footer>
     </div>
   );
 };

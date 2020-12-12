@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import api from '../services/api';
+import background from '../images/smoky-background.jpg';
 import '../styles/Home.css';
 
 const Home = () => {
@@ -17,61 +17,41 @@ const Home = () => {
 
   return (
     <div className="home">
-      <div className="title-container container jumbotron">
-        <div className="page-header">
+      <div className="title-container">
+        <div className="background-wrapper">
           <h1>
             Smoky Mountain
             <br />
             Getaways
           </h1>
+          <form className="forms">
+            <div className="input-container">
+              <div>
+                <label>Check-in</label>
+                <input type="date" name="checkin date" placeholder="Add Date" />
+              </div>
+              <div>
+                <label>Check-out</label>
+                <input
+                  type="date"
+                  name="checkout date"
+                  placeholder="Add Date"
+                />
+              </div>
+              <div>
+                <label>Guests</label>
+                <input
+                  type="number"
+                  name="number of guests"
+                  placeholder="Add guests"
+                />
+              </div>
+            </div>
+            <button type="submit" className="submitBtn">
+              SEARCH
+            </button>
+          </form>
         </div>
-        <div className="btn-group btn-group-lg">
-          <button
-            type="button"
-            name="checkin"
-            className={`btn btn-light ${buttonActivity.checkin && 'active'}`}
-            onClick={handleButtonClick}
-          >
-            Checkin
-          </button>
-          <button
-            type="button"
-            name="checkout"
-            className={`btn btn-light ${buttonActivity.checkout && 'active'}`}
-            onClick={handleButtonClick}
-          >
-            Checkout
-          </button>
-          <button
-            type="button"
-            name="guests"
-            className={`btn btn-light ${buttonActivity.guests && 'active'}`}
-            onClick={handleButtonClick}
-          >
-            Guests
-          </button>
-        </div>
-        {/* <form>
-          <div className="form-group">
-            <label htmlFor="exampleInputEmail1">Checkin</label>
-            <input type="date" name="checkin date" placeholder="Add Date" />
-          </div>
-          <div className="form-group">
-            <label htmlFor="exampleInputPassword1">Checkout</label>
-            <input type="date" name="checkout date" placeholder="Add Date" />
-          </div>
-          <div className="form-group">
-            <label htmlFor="exampleInputPassword1"># of Guests</label>
-            <input
-              type="number"
-              name="number of guests"
-              placeholder="Add Guests"
-            />
-          </div>
-          <button type="submit" className="btn btn-primary">
-            Search
-          </button>
-        </form> */}
       </div>
     </div>
   );
