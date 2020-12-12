@@ -34,7 +34,7 @@ const App = () => {
 
   return (
     <div className="App">
-      <nav className="navbar navbar-expand-lg navbar-light sticky-top">
+      <nav className="navbar navbar-expand-lg navbar-light bg-light sticky-top">
         <NavLink to="/home" className="navbar-brand">
           SMG
         </NavLink>

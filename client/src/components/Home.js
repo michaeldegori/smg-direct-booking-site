@@ -19,7 +19,7 @@ const Home = () => {
     <div className="home">
       <div className="title-container">
         <div className="background-wrapper">
-          <h1>
+          <h1 class="text-light">
             Smoky Mountain
             <br />
             Getaways
@@ -30,7 +30,7 @@ const Home = () => {
                 <div>
                   <label
                     for="inputCheckin"
-                    className="form-control-lg text-light"
+                    className="form-control-lg text-light m-0"
                   >
                     check-in
                   </label>
@@ -46,7 +46,7 @@ const Home = () => {
                 <div>
                   <label
                     for="inputCheckout"
-                    className="form-control-lg text-light"
+                    className="form-control-lg text-light m-0"
                   >
                     check-out
                   </label>
@@ -62,7 +62,7 @@ const Home = () => {
                 <div>
                   <label
                     for="inputGuests"
-                    className="form-control-lg text-light"
+                    className="form-control-lg text-light m-0"
                   >
                     guests
                   </label>
@@ -78,7 +78,7 @@ const Home = () => {
               </div>
               <button
                 type="submit"
-                className="btn btn-primary text-dark font-weight-bold"
+                className="btn btn-lg btn-primary text-dark font-weight-bold"
               >
                 search
               </button>
