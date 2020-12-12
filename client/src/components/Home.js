@@ -24,33 +24,66 @@ const Home = () => {
             <br />
             Getaways
           </h1>
-          <form className="forms">
-            <div className="input-container">
-              <div>
-                <label>Check-in</label>
-                <input type="date" name="checkin date" placeholder="Add Date" />
+          <div className="container">
+            <form>
+              <div className="form-group">
+                <div>
+                  <label
+                    for="inputCheckin"
+                    className="form-control-lg text-light"
+                  >
+                    check-in
+                  </label>
+                  <br />
+                  <input
+                    id="inputCheckin"
+                    type="date"
+                    name="checkin date"
+                    placeholder="Add Date"
+                    className="form-control-lg text-secondary bg-light border-0 rounded"
+                  />
+                </div>
+                <div>
+                  <label
+                    for="inputCheckout"
+                    className="form-control-lg text-light"
+                  >
+                    check-out
+                  </label>
+                  <br />
+                  <input
+                    id="inputCheckout"
+                    type="date"
+                    name="checkout date"
+                    placeholder="Add Date"
+                    className="form-control-lg text-secondary bg-light border-0 rounded"
+                  />
+                </div>
+                <div>
+                  <label
+                    for="inputGuests"
+                    className="form-control-lg text-light"
+                  >
+                    guests
+                  </label>
+                  <br />
+                  <input
+                    id="inputGuests"
+                    type="number"
+                    name="number of guests"
+                    placeholder="add guests"
+                    className="form-control-lg text-secondary bg-light border-0 rounded"
+                  />
+                </div>
               </div>
-              <div>
-                <label>Check-out</label>
-                <input
-                  type="date"
-                  name="checkout date"
-                  placeholder="Add Date"
-                />
-              </div>
-              <div>
-                <label>Guests</label>
-                <input
-                  type="number"
-                  name="number of guests"
-                  placeholder="Add guests"
-                />
-              </div>
-            </div>
-            <button type="submit" className="submitBtn">
-              SEARCH
-            </button>
-          </form>
+              <button
+                type="submit"
+                className="btn btn-primary text-dark font-weight-bold"
+              >
+                search
+              </button>
+            </form>
+          </div>
         </div>
       </div>
     </div>

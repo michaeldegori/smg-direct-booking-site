@@ -1,13 +1,14 @@
-$primary: #ff7e00;
-// $secondary:     $gray-600 !default;
-$success: #0dffb3;
-// $info:          $cyan !default;
-// $warning:       $yellow !default;
-// $danger:        $red !default;
-$light: #f5f9f7;
-$dark: #323c53;
+$theme-colors: (
+  'primary': #f4bf38,
+  'success': #7eb449,
+  'info': #323c53,
+  'warning': #fca411,
+  'danger': #f44336,
+  'light': #f5f9f7,
+  'dark': #323c53,
+);
 
-// $body-bg:                   $white !default;
-// $body-color:                $gray-900 !default;
+$body-bg: #f5f9f7;
+$body-color: #323c53;
 
-@import 'bootstrap/scss/bootstrap.scss';
+@import 'node_modules/bootstrap/scss/bootstrap';

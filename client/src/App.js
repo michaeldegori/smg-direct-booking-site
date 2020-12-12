@@ -34,7 +34,7 @@ const App = () => {
 
   return (
     <div className="App">
-      <nav className="navbar navbar-expand-lg navbar-light">
+      <nav className="navbar navbar-expand-lg navbar-light sticky-top">
         <NavLink to="/home" className="navbar-brand">
           SMG
         </NavLink>
@@ -143,24 +143,35 @@ const App = () => {
         </body>
       </Switch>
 
-      <footer>
-        <div className="footer-icon-container">
-          <Link to="/properties">
-            <img src={cabinGlyph} alt="properties" />
-            <h4>PROPERTIES</h4>
-          </Link>
-        </div>
-        <div className="footer-icon-container">
-          <Link to="/about">
-            <img src={aboutGlyph} alt="about us" />
-            <h4>ABOUT</h4>
-          </Link>
-        </div>
-        <div className="footer-icon-container">
-          <Link to="/contact">
-            <img src={contactGlyph} alt="contact us" />
-            <h4>CONTACT</h4>
-          </Link>
+      <footer className="container bg-primary fixed-bottom">
+        <div className="row">
+          <div className="col">
+            <Link
+              to="/properties"
+              className="my-1 d-flex flex-column align-items-center"
+            >
+              <img src={cabinGlyph} alt="properties" />
+              <h6 class="text-dark m-0">properties</h6>
+            </Link>
+          </div>
+          <div className="col">
+            <Link
+              to="/about"
+              className="my-1 d-flex flex-column align-items-center"
+            >
+              <img src={aboutGlyph} alt="about us" />
+              <h6 class="text-dark m-0">about</h6>
+            </Link>
+          </div>
+          <div className="col">
+            <Link
+              to="/contact"
+              className="my-1 d-flex flex-column align-items-center"
+            >
+              <img src={contactGlyph} alt="contact us" />
+              <h6 class="text-dark m-0">contact</h6>
+            </Link>
+          </div>
         </div>
       </footer>
     </div>
