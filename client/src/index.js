@@ -6,6 +6,8 @@ import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
 // import 'bootstrap/scss/bootstrap.scss';
 import './custom.scss';
+import 'react-date-range/dist/styles.css';
+import 'react-date-range/dist/theme/default.css';
 
 ReactDOM.render(
   <BrowserRouter>

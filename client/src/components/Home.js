@@ -4,18 +4,6 @@ import magGlyph from '../images/mag-glyph.png';
 import background from '../images/smoky-background.jpg';
 
 const Home = () => {
-  // const [buttonActivity, setButtonActivity] = useState({
-  //   checkin: false,
-  //   checkout: false,
-  //   guests: false,
-  // });
-
-  // const handleButtonClick = (event) => {
-  //   setButtonActivity({
-  //     [event.target.name]: true,
-  //   });
-  // };
-
   return (
     <div className="home container-fluid">
       <div className="background-wrapper">
@@ -42,13 +30,13 @@ const Home = () => {
         </div>
         <div className="row">
           <div className="col-sm-4">
-            <div class="card" style={{ width: '100%' }}>
-              <div class="card-body">
-                <h5 class="card-title">
+            <div className="card" style={{ width: '100%' }}>
+              <div className="card-body">
+                <h5 className="card-title">
                   Book one of our georgeous cabins today
                 </h5>
-                <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                <p class="card-text">
+                <h6 className="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                <p className="card-text">
                   Some quick example text to build on the card title and make up
                   the bulk of the card's content.
                 </p>
