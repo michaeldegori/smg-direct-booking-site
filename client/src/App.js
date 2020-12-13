@@ -80,6 +80,16 @@ const App = () => {
                   </NavLink>
                 </li>
                 <li className="nav-item my-3">
+                  <NavLink
+                    onClick={() => setOpen(!open)}
+                    to="/users/signup"
+                    className="nav-link text-dark p-0"
+                    activeClassName="highlight"
+                  >
+                    Sign Up
+                  </NavLink>
+                </li>
+                <li className="nav-item my-3">
                   <button className="btn btn-sm btn-primary rounded-pill text-dark py-0 px-3">
                     <NavLink
                       onClick={() => setOpen(!open)}
