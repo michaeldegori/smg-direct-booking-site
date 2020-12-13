@@ -57,13 +57,12 @@ class Home extends Component {
                     up the bulk of the card's content.
                   </p>
                   <DateRangePicker
-                    withFullScreenPortal
-                    autoFocus
+                    withPortal
                     block={true}
                     orientation="verticalScrollable"
                     minimumNights={3}
                     withFullScreenPortal={true}
-                    numberOfMonths={6}
+                    numberOfMonths={3}
                     startDate={this.state.startDate} // momentPropTypes.momentObj or null,
                     startDateId="your_unique_start_date_id" // PropTypes.string.isRequired,
                     endDate={this.state.endDate} // momentPropTypes.momentObj or null,

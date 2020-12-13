@@ -7,6 +7,7 @@ import { BrowserRouter } from 'react-router-dom';
 import './custom.scss';
 import 'react-dates/initialize';
 import 'react-dates/lib/css/_datepicker.css';
+import './styles/react_dates_overrides.css';
 
 ReactDOM.render(
   <BrowserRouter>
