@@ -18,17 +18,14 @@ import contactGlyph from './images/contact-glyph.png';
 import aboutGlyph from './images/about-glyph.png';
 import background from './images/smoky-background.jpg';
 import logo from './images/smg-logo-blue-cabin-only.png';
+import Button from 'react-bootstrap/Button';
+import Collapse from 'react-bootstrap/Collapse';
 
 const App = () => {
-  const [hamburgerActive, setHamburgerActive] = useState(false);
+  const [open, setOpen] = useState(false);
   const history = useHistory();
 
-  const toggleHambuger = () => {
-    setHamburgerActive(!hamburgerActive);
-  };
-
   const logout = () => {
-    toggleHambuger();
     localStorage.removeItem('token');
     history.push('/home');
   };
@@ -39,77 +36,74 @@ const App = () => {
         <NavLink to="/home" className="navbar-brand">
           <img src={logo} alt="smoky mountain getaways" />
         </NavLink>
-        <button
-          // onClick={toggleHambuger}
-          className="navbar-toggler border-0"
-          type="button"
-          data-toggle="collapse"
-          data-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
+        <Button
+          onClick={() => setOpen(!open)}
+          aria-controls="example-fade-text"
+          aria-expanded={open}
+          className="navbar-toggler bg-transparent border-0"
         >
           <span className="navbar-toggler-icon"></span>
-        </button>
-        <div className="collapse navbar-collapse" id="navbarNav">
-          <ul className="show navbarNav">
-            <li className="nav-item active">
-              <NavLink
-                to="/home"
-                className="nav-link text-dark"
-                activeClassName="highlight"
-                // onClick={toggleHambuger}
-              >
-                Home
-              </NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink
-                to="/properties"
-                className="nav-link text-dark"
-                activeClassName="highlight"
-                onClick={toggleHambuger}
-              >
-                Our Properties
-              </NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink
-                to="/about"
-                className="nav-link text-dark"
-                activeClassName="highlight"
-                onClick={toggleHambuger}
-              >
-                About Us
-              </NavLink>
-            </li>
-            <li className="nav-item">
-              <button className="btn btn-sm btn-primary rounded-pill text-dark py-0 px-3">
+        </Button>
+        <Collapse in={open}>
+          <div className="collapse navbar-collapse" id="navbarNav">
+            <ul className="show navbar-nav">
+              <li className="nav-item active">
                 <NavLink
-                  to="/users/login"
-                  id="login-link"
-                  className="nav-link text-dark font-weight-bold"
-                  activeClassName="highlight"
-                  onClick={toggleHambuger}
-                >
-                  Login
-                </NavLink>
-              </button>
-            </li>
-            <li className="nav-item">
-              <button className="btn btn-sm btn-danger rounded-pill text-dark py-0 px-3">
-                <NavLink
+                  onClick={() => setOpen(!open)}
                   to="/home"
-                  className="nav-link text-light font-weight-bold"
+                  className="nav-link text-dark"
                   activeClassName="highlight"
-                  onClick={logout}
                 >
-                  Logout
+                  Home
                 </NavLink>
-              </button>
-            </li>
-          </ul>
-        </div>
+              </li>
+              <li className="nav-item">
+                <NavLink
+                  onClick={() => setOpen(!open)}
+                  to="/properties"
+                  className="nav-link text-dark"
+                  activeClassName="highlight"
+                >
+                  Our Properties
+                </NavLink>
+              </li>
+              <li className="nav-item">
+                <NavLink
+                  onClick={() => setOpen(!open)}
+                  to="/about"
+                  className="nav-link text-dark"
+                  activeClassName="highlight"
+                >
+                  About Us
+                </NavLink>
+              </li>
+              <li className="nav-item">
+                <button className="btn btn-sm btn-primary rounded-pill text-dark py-0 px-3">
+                  <NavLink
+                    to="/users/login"
+                    id="login-link"
+                    className="nav-link text-dark font-weight-bold"
+                    activeClassName="highlight"
+                  >
+                    Login
+                  </NavLink>
+                </button>
+              </li>
+              <li className="nav-item">
+                <button className="btn btn-sm btn-danger rounded-pill text-dark py-0 px-3">
+                  <NavLink
+                    to="/home"
+                    className="nav-link text-light font-weight-bold"
+                    activeClassName="highlight"
+                    onClick={logout}
+                  >
+                    Logout
+                  </NavLink>
+                </button>
+              </li>
+            </ul>
+          </div>
+        </Collapse>
       </nav>
 
       <div className="background-wrapper">
