@@ -20,6 +20,7 @@ import background from './images/smoky-background.jpg';
 import logo from './images/smg-logo-blue-cabin-only.png';
 import Button from 'react-bootstrap/Button';
 import Collapse from 'react-bootstrap/Collapse';
+import FontAwesome from 'react-fontawesome';
 
 const App = () => {
   const [open, setOpen] = useState(false);
@@ -42,7 +43,9 @@ const App = () => {
           aria-expanded={open}
           className="navbar-toggler custom-toggler bg-transparent border-0"
         >
-          <span className="navbar-toggler-icon"></span>
+          <span className="navbar-toggler-icon">
+            <i class="fas fa-bars"></i>
+          </span>
         </Button>
         <Collapse in={open}>
           <div className="collapse navbar-collapse" id="navbarNav">
