@@ -14,3 +14,19 @@
 .search-btn {
   height: 1.8rem;
 }
+
+.CalendarMonthGrid {
+  height: calc(100vh-90px);
+}
+
+body
+  > div:nth-child(10)
+  > div
+  > div
+  > div
+  > div
+  > div.DayPicker_focusRegion.DayPicker_focusRegion_1
+  > div.DayPicker_transitionContainer.DayPicker_transitionContainer_1.DayPicker_transitionContainer__vertical.DayPicker_transitionContainer__vertical_2
+  > div {
+  transform: translateY(75px);
+}

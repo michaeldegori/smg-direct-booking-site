@@ -4,10 +4,9 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
-// import 'bootstrap/scss/bootstrap.scss';
 import './custom.scss';
-import 'react-date-range/dist/styles.css';
-import 'react-date-range/dist/theme/default.css';
+import 'react-dates/initialize';
+import 'react-dates/lib/css/_datepicker.css';
 
 ReactDOM.render(
   <BrowserRouter>
