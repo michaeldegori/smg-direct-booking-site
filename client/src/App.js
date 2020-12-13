@@ -16,12 +16,9 @@ import EditProperty from './components/EditProperty';
 import cabinGlyph from './images/cabin-glyph.png';
 import contactGlyph from './images/contact-glyph.png';
 import aboutGlyph from './images/about-glyph.png';
-import background from './images/smoky-background.jpg';
 import logo from './images/smg-logo-blue-cabin-only.png';
 import Button from 'react-bootstrap/Button';
 import Collapse from 'react-bootstrap/Collapse';
-import { faHome } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const App = () => {
   const [open, setOpen] = useState(false);
@@ -34,89 +31,84 @@ const App = () => {
 
   return (
     <div className="App">
-      <nav className="navbar navbar-expand-lg navbar-light bg-light sticky-top">
-        <NavLink to="/home" className="navbar-brand">
+      <nav className="navbar navbar-expand-lg navbar-light bg-white sticky-top p-0">
+        <NavLink to="/home" className="navbar-brand px-4 py-2">
           <img src={logo} alt="smoky mountain getaways" />
         </NavLink>
         <Button
+          className="burger rounded-pill bg-transparent border-0 px-4 py-2"
           onClick={() => setOpen(!open)}
           aria-controls="example-fade-text"
           aria-expanded={open}
-          className="navbar-toggler custom-toggler bg-transparent border-0"
         >
-          <span className="navbar-toggler-icon">
-            <i class="fas fa-bars"></i>
-          </span>
+          <div className={`${open && 'burger-open'} line1 rounded-pill`}></div>
+          <div className={`${open && 'burger-open'} line2 rounded-pill`}></div>
+          <div className={`${open && 'burger-open'} line3 rounded-pill`}></div>
         </Button>
         <Collapse in={open}>
-          <div className="collapse navbar-collapse" id="navbarNav">
-            <ul className="show navbar-nav">
-              <li className="nav-item active">
-                <NavLink
-                  onClick={() => setOpen(!open)}
-                  to="/home"
-                  className="nav-link text-dark"
-                  activeClassName="highlight"
-                >
-                  Home
-                </NavLink>
-              </li>
-              <li className="nav-item">
-                <NavLink
-                  onClick={() => setOpen(!open)}
-                  to="/properties"
-                  className="nav-link text-dark"
-                  activeClassName="highlight"
-                >
-                  Our Properties
-                </NavLink>
-              </li>
-              <li className="nav-item">
-                <NavLink
-                  onClick={() => setOpen(!open)}
-                  to="/about"
-                  className="nav-link text-dark"
-                  activeClassName="highlight"
-                >
-                  About Us
-                </NavLink>
-              </li>
-              <li className="nav-item">
-                <button className="btn btn-sm btn-primary rounded-pill text-dark py-0 px-3">
+          <div className="navbar-collapse px-0" id="navbarNav">
+            <div className="full-height-nav bg-white p-0 d-flex justify-content-center align-items-center">
+              <ul className="show navbar-nav text-center">
+                <li className="nav-item my-3 active">
                   <NavLink
-                    to="/users/login"
-                    id="login-link"
-                    className="nav-link text-dark font-weight-bold"
-                    activeClassName="highlight"
-                  >
-                    Login
-                  </NavLink>
-                </button>
-              </li>
-              <li className="nav-item">
-                <button className="btn btn-sm btn-danger rounded-pill text-dark py-0 px-3">
-                  <NavLink
+                    onClick={() => setOpen(!open)}
                     to="/home"
-                    className="nav-link text-light font-weight-bold"
+                    className="nav-link text-dark p-0"
                     activeClassName="highlight"
-                    onClick={logout}
                   >
-                    Logout
+                    Home
                   </NavLink>
-                </button>
-              </li>
-            </ul>
+                </li>
+                <li className="nav-item my-3">
+                  <NavLink
+                    onClick={() => setOpen(!open)}
+                    to="/properties"
+                    className="nav-link text-dark p-0"
+                    activeClassName="highlight"
+                  >
+                    Our Properties
+                  </NavLink>
+                </li>
+                <li className="nav-item my-3">
+                  <NavLink
+                    onClick={() => setOpen(!open)}
+                    to="/about"
+                    className="nav-link text-dark p-0"
+                    activeClassName="highlight"
+                  >
+                    About Us
+                  </NavLink>
+                </li>
+                <li className="nav-item my-3">
+                  <button className="btn btn-sm btn-primary rounded-pill text-dark py-0 px-3">
+                    <NavLink
+                      onClick={() => setOpen(!open)}
+                      to="/users/login"
+                      id="login-link"
+                      className="nav-link text-dark font-weight-bold"
+                      activeClassName="highlight"
+                    >
+                      Login
+                    </NavLink>
+                  </button>
+                </li>
+                <li className="nav-item my-3">
+                  <button className="btn btn-sm btn-danger rounded-pill text-dark py-0 px-3">
+                    <NavLink
+                      to="/home"
+                      className="nav-link text-light font-weight-bold"
+                      activeClassName="highlight"
+                      onClick={logout}
+                    >
+                      Logout
+                    </NavLink>
+                  </button>
+                </li>
+              </ul>
+            </div>
           </div>
         </Collapse>
       </nav>
-
-      <div className="background-wrapper">
-        <img
-          src={background}
-          alt="smoky mountains background"
-          className="bg-img"
-        />
-      </div>
 
       <Switch>
         <body>
@@ -155,7 +147,7 @@ const App = () => {
               className="my-1 d-flex flex-column align-items-center"
             >
               <img src={cabinGlyph} alt="properties" />
-              <h6 className="text-dark m-0">properties</h6>
+              <small className="text-dark m-0">properties</small>
             </Link>
           </div>
           <div className="col">
@@ -164,7 +156,7 @@ const App = () => {
               className="my-1 d-flex flex-column align-items-center"
             >
               <img src={aboutGlyph} alt="about us" />
-              <h6 className="text-dark m-0">about</h6>
+              <small className="text-dark m-0">about</small>
             </Link>
           </div>
           <div className="col">
@@ -173,7 +165,7 @@ const App = () => {
               className="my-1 d-flex flex-column align-items-center"
             >
               <img src={contactGlyph} alt="contact us" />
-              <h6 className="text-dark m-0">contact</h6>
+              <small className="text-dark m-0">contact</small>
             </Link>
           </div>
         </div>

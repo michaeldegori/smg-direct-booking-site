@@ -1,7 +1,14 @@
-.home h1 {
-  font-family: 'Rock Salt', cursive;
-  line-height: 3.5rem;
-  margin: 27vmin 0 15vmin;
+.background-wrapper {
+  position: fixed;
+  top: 0px;
+  height: 100%;
+  z-index: -1;
+}
+
+.bg-img {
+  position: relative;
+  left: -31%;
+  height: 100vmax;
 }
 
 .search-btn {
