@@ -19,7 +19,7 @@ import aboutGlyph from './images/about-glyph.png';
 import background from './images/smoky-background.jpg';
 import logo from './images/smg-logo-blue-cabin-only.png';
 import Button from 'react-bootstrap/Button';
-import Collapse from 'react-bootstrap/Collapse';
+import Fade from 'react-bootstrap/Fade';
 
 const App = () => {
   const [open, setOpen] = useState(false);
@@ -44,7 +44,7 @@ const App = () => {
         >
           <span className="navbar-toggler-icon"></span>
         </Button>
-        <Collapse in={open}>
+        <Fade in={open}>
           <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="show navbar-nav">
               <li className="nav-item active">
@@ -103,7 +103,7 @@ const App = () => {
               </li>
             </ul>
           </div>
-        </Collapse>
+        </Fade>
       </nav>
 
       <div className="background-wrapper">
