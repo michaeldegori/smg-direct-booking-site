@@ -40,7 +40,7 @@ nav img {
 
 .line1.burger-open {
   transform: rotate(225deg) translate(-0.4rem, -0.4rem);
-  background-color: #ef524a;
+  background-color: #f4bf38;
 }
 
 .line2.burger-open {
@@ -50,7 +50,7 @@ nav img {
 
 .line3.burger-open {
   transform: rotate(-225deg) translate(-0.3rem, 0.3rem);
-  background-color: #ef524a;
+  background-color: #f4bf38;
 }
 
 footer img {

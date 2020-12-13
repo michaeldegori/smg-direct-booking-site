@@ -1,4 +1,5 @@
 .CalendarDay {
+  border-radius: 5px;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   cursor: pointer;
@@ -207,6 +208,18 @@
   border: 0;
   padding: 0;
   margin: 0;
+}
+body
+  > div:nth-child(10)
+  > div
+  > div
+  > div
+  > div
+  > div.DayPicker_focusRegion.DayPicker_focusRegion_1
+  > div
+  > div.DayPickerNavigation.DayPickerNavigation_1.DayPickerNavigation__vertical.DayPickerNavigation__vertical_2.DayPickerNavigation__verticalDefault.DayPickerNavigation__verticalDefault_3.DayPickerNavigation__verticalScrollable.DayPickerNavigation__verticalScrollable_4.DayPickerNavigation__verticalScrollableDefault.DayPickerNavigation__verticalScrollableDefault_5.DayPickerNavigation__verticalScrollable_prevNav.DayPickerNavigation__verticalScrollable_prevNav_6
+  > div {
+  display: none;
 }
 .DayPickerNavigation_button__default {
   border: 1px solid #e4e7e7;
