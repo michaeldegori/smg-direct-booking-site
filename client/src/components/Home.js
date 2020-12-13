@@ -47,7 +47,7 @@ class Home extends Component {
               <div className="card" style={{ width: '100%' }}>
                 <div className="card-body">
                   <h5 className="card-title">
-                    Book one of our georgeous cabins today
+                    Book one of our georgeous getaway cabins today!
                   </h5>
                   <h6 className="card-subtitle mb-2 text-muted">
                     Card subtitle
@@ -56,90 +56,68 @@ class Home extends Component {
                     Some quick example text to build on the card title and make
                     up the bulk of the card's content.
                   </p>
-                  <DateRangePicker
-                    withPortal
-                    block={true}
-                    orientation="verticalScrollable"
-                    minimumNights={3}
-                    withFullScreenPortal={true}
-                    numberOfMonths={3}
-                    startDate={this.state.startDate} // momentPropTypes.momentObj or null,
-                    startDateId="your_unique_start_date_id" // PropTypes.string.isRequired,
-                    endDate={this.state.endDate} // momentPropTypes.momentObj or null,
-                    endDateId="your_unique_end_date_id" // PropTypes.string.isRequired,
-                    onDatesChange={({ startDate, endDate }) =>
-                      this.setState({ startDate, endDate })
-                    } // PropTypes.func.isRequired,
-                    focusedInput={this.state.focusedInput} // PropTypes.oneOf([START_DATE, END_DATE]) or null,
-                    onFocusChange={(focusedInput) =>
-                      this.setState({ focusedInput })
-                    } // PropTypes.func.isRequired,
-                  />
-                  <button className="btn btn-primary">Search</button>
+                  <form>
+                    <div className="form-group">
+                      <label className="mb-1">
+                        When will you be joining us?
+                      </label>
+                      <DateRangePicker
+                        withPortal
+                        block={true}
+                        orientation="verticalScrollable"
+                        minimumNights={3}
+                        withFullScreenPortal={true}
+                        numberOfMonths={4}
+                        startDate={this.state.startDate} // momentPropTypes.momentObj or null,
+                        startDateId="your_unique_start_date_id" // PropTypes.string.isRequired,
+                        endDate={this.state.endDate} // momentPropTypes.momentObj or null,
+                        endDateId="your_unique_end_date_id" // PropTypes.string.isRequired,
+                        onDatesChange={({ startDate, endDate }) =>
+                          this.setState({ startDate, endDate })
+                        } // PropTypes.func.isRequired,
+                        focusedInput={this.state.focusedInput} // PropTypes.oneOf([START_DATE, END_DATE]) or null,
+                        onFocusChange={(focusedInput) =>
+                          this.setState({ focusedInput })
+                        } // PropTypes.func.isRequired,
+                      />
+                      <div class="form-group">
+                        <label
+                          for="exampleFormControlSelect1"
+                          className="mt-2 mb-1"
+                        >
+                          Total Guests
+                        </label>
+                        <select
+                          class="form-control"
+                          id="exampleFormControlSelect1"
+                        >
+                          <option>1</option>
+                          <option>2</option>
+                          <option>3</option>
+                          <option>4</option>
+                          <option>5</option>
+                          <option>6</option>
+                          <option>7</option>
+                          <option>8</option>
+                          <option>9</option>
+                          <option>10</option>
+                          <option>11</option>
+                          <option>12</option>
+                          <option>13</option>
+                          <option>14</option>
+                        </select>
+                      </div>
+                      <button
+                        className="btn btn-primary text-white mt-3"
+                        style={{ width: '100%' }}
+                      >
+                        Search
+                      </button>
+                    </div>
+                  </form>
                 </div>
               </div>
             </div>
-            {/* <form className="container">
-            <div className="form-group d-flex flex-column align-items-center">
-              <div className="row d-flex flex-column align-items-center">
-                <label
-                  for="inputCheckin"
-                  className="text-white align-self-start my-2"
-                >
-                  check-in
-                </label>
-                <input
-                  id="inputCheckin"
-                  type="date"
-                  name="checkin date"
-                  placeholder="Add Date"
-                  className="text-secondary bg-white px-3 py-2 border-0 rounded"
-                />
-              </div>
-              <div className="row d-flex flex-column align-items-center">
-                <label
-                  for="inputCheckout"
-                  className="text-white align-self-start my-2"
-                >
-                  check-out
-                </label>
-                <input
-                  id="inputCheckout"
-                  type="date"
-                  name="checkout date"
-                  placeholder="Add Date"
-                  className="text-secondary bg-white px-3 py-2 border-0 rounded"
-                />
-              </div>
-              <div className="row d-flex flex-column align-items-center">
-                <label
-                  for="inputGuests"
-                  className="text-white align-self-start my-2"
-                >
-                  guests
-                </label>
-                <input
-                  id="inputGuests"
-                  type="number"
-                  name="number of guests"
-                  placeholder="add guests"
-                  className="text-secondary bg-white px-3 py-2 border-0 rounded"
-                />
-              </div>
-              <div className="row d-flex flex-column align-items-center">
-                <button
-                  type="submit"
-                  className="btn btn-lg btn-primary rounded my-3 p-2 d-flex"
-                >
-                  <img
-                    src={magGlyph}
-                    alt="magnifying glass"
-                    className="search-btn"
-                  />
-                </button>
-              </div>
-            </div>
-          </form> */}
           </div>
         </div>
       </div>
