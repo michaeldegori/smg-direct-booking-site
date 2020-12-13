@@ -1,5 +1,5 @@
 import './App.css';
-import React, { useState, useRef } from 'react';
+import React, { useState } from 'react';
 import {
   Redirect,
   NavLink,
@@ -17,6 +17,7 @@ import cabinGlyph from './images/cabin-glyph.png';
 import contactGlyph from './images/contact-glyph.png';
 import aboutGlyph from './images/about-glyph.png';
 import background from './images/smoky-background.jpg';
+import logo from './images/smg-logo-blue-cabin-only.png';
 
 const App = () => {
   const [hamburgerActive, setHamburgerActive] = useState(false);
@@ -36,11 +37,11 @@ const App = () => {
     <div className="App">
       <nav className="navbar navbar-expand-lg navbar-light bg-light sticky-top">
         <NavLink to="/home" className="navbar-brand">
-          SMG
+          <img src={logo} alt="smoky mountain getaways" />
         </NavLink>
         <button
-          onClick={toggleHambuger}
-          className="navbar-toggler"
+          // onClick={toggleHambuger}
+          className="navbar-toggler border-0"
           type="button"
           data-toggle="collapse"
           data-target="#navbarNav"
@@ -50,17 +51,14 @@ const App = () => {
         >
           <span className="navbar-toggler-icon"></span>
         </button>
-        <div
-          className={`${!hamburgerActive && 'collapse'} navbar-collapse`}
-          id="navbarNav"
-        >
-          <ul className={`${hamburgerActive && 'show'} navbar-nav`}>
+        <div className="collapse navbar-collapse" id="navbarNav">
+          <ul className="show navbarNav">
             <li className="nav-item active">
               <NavLink
                 to="/home"
-                className="nav-link"
+                className="nav-link text-dark"
                 activeClassName="highlight"
-                onClick={toggleHambuger}
+                // onClick={toggleHambuger}
               >
                 Home
               </NavLink>
@@ -68,7 +66,7 @@ const App = () => {
             <li className="nav-item">
               <NavLink
                 to="/properties"
-                className="nav-link"
+                className="nav-link text-dark"
                 activeClassName="highlight"
                 onClick={toggleHambuger}
               >
@@ -78,7 +76,7 @@ const App = () => {
             <li className="nav-item">
               <NavLink
                 to="/about"
-                className="nav-link"
+                className="nav-link text-dark"
                 activeClassName="highlight"
                 onClick={toggleHambuger}
               >
@@ -86,32 +84,40 @@ const App = () => {
               </NavLink>
             </li>
             <li className="nav-item">
-              <NavLink
-                to="/users/login"
-                id="login-link"
-                className="nav-link"
-                activeClassName="highlight"
-                onClick={toggleHambuger}
-              >
-                Login
-              </NavLink>
+              <button className="btn btn-sm btn-primary rounded-pill text-dark py-0 px-3">
+                <NavLink
+                  to="/users/login"
+                  id="login-link"
+                  className="nav-link text-dark font-weight-bold"
+                  activeClassName="highlight"
+                  onClick={toggleHambuger}
+                >
+                  Login
+                </NavLink>
+              </button>
             </li>
             <li className="nav-item">
-              <NavLink
-                to="/home"
-                className="nav-link"
-                activeClassName="highlight"
-                onClick={logout}
-              >
-                Logout
-              </NavLink>
+              <button className="btn btn-sm btn-danger rounded-pill text-dark py-0 px-3">
+                <NavLink
+                  to="/home"
+                  className="nav-link text-light font-weight-bold"
+                  activeClassName="highlight"
+                  onClick={logout}
+                >
+                  Logout
+                </NavLink>
+              </button>
             </li>
           </ul>
         </div>
       </nav>
 
       <div className="background-wrapper">
-        <img src={background} alt="smoky mountains background" />
+        <img
+          src={background}
+          alt="smoky mountains background"
+          className="bg-img"
+        />
       </div>
 
       <Switch>
@@ -151,7 +157,7 @@ const App = () => {
               className="my-1 d-flex flex-column align-items-center"
             >
               <img src={cabinGlyph} alt="properties" />
-              <h6 class="text-dark m-0">properties</h6>
+              <h6 className="text-dark m-0">properties</h6>
             </Link>
           </div>
           <div className="col">
@@ -160,7 +166,7 @@ const App = () => {
               className="my-1 d-flex flex-column align-items-center"
             >
               <img src={aboutGlyph} alt="about us" />
-              <h6 class="text-dark m-0">about</h6>
+              <h6 className="text-dark m-0">about</h6>
             </Link>
           </div>
           <div className="col">
@@ -169,7 +175,7 @@ const App = () => {
               className="my-1 d-flex flex-column align-items-center"
             >
               <img src={contactGlyph} alt="contact us" />
-              <h6 class="text-dark m-0">contact</h6>
+              <h6 className="text-dark m-0">contact</h6>
             </Link>
           </div>
         </div>

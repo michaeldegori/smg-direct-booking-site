@@ -1,23 +1,9 @@
-.title-container {
-  margin-top: 3.75rem;
-}
-
 .home h1 {
   font-family: 'Rock Salt', cursive;
-  text-align: center;
-  /* font-size: 13vmin; */
-  line-height: 16vmin;
+  line-height: 3.5rem;
   margin: 27vmin 0 15vmin;
 }
 
-.forms {
-  background-color: #f5f9f748;
-  border-radius: 0.3rem;
-  padding: 0.5rem 1.2rem 0;
-}
-
-.forms label {
-  font-weight: 500;
-  color: #f5f9f7;
-  margin: 0;
+.search-btn {
+  height: 1.8rem;
 }
