@@ -19,7 +19,7 @@ import aboutGlyph from './images/about-glyph.png';
 import background from './images/smoky-background.jpg';
 import logo from './images/smg-logo-blue-cabin-only.png';
 import Button from 'react-bootstrap/Button';
-import Fade from 'react-bootstrap/Fade';
+import Collapse from 'react-bootstrap/Collapse';
 
 const App = () => {
   const [open, setOpen] = useState(false);
@@ -40,11 +40,11 @@ const App = () => {
           onClick={() => setOpen(!open)}
           aria-controls="example-fade-text"
           aria-expanded={open}
-          className="navbar-toggler bg-transparent border-0"
+          className="navbar-toggler custom-toggler bg-transparent border-0"
         >
           <span className="navbar-toggler-icon"></span>
         </Button>
-        <Fade in={open}>
+        <Collapse in={open}>
           <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="show navbar-nav">
               <li className="nav-item active">
@@ -103,7 +103,7 @@ const App = () => {
               </li>
             </ul>
           </div>
-        </Fade>
+        </Collapse>
       </nav>
 
       <div className="background-wrapper">
