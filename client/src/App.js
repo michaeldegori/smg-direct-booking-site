@@ -20,7 +20,8 @@ import background from './images/smoky-background.jpg';
 import logo from './images/smg-logo-blue-cabin-only.png';
 import Button from 'react-bootstrap/Button';
 import Collapse from 'react-bootstrap/Collapse';
-import FontAwesome from 'react-fontawesome';
+import { faHome } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const App = () => {
   const [open, setOpen] = useState(false);
