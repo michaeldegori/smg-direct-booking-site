@@ -20,33 +20,27 @@ class Home extends Component {
   render() {
     return (
       <section className="home">
-        <div class="container-fluid" style={{ height: '100vh' }}>
-          <section class="section section-top section-full">
-            <div
-              class="bg-cover"
-              style={{
-                backgroundImage: `url(${background})`,
-                position: 'absolute',
-                top: 0,
-                bottom: 0,
-                left: 0,
-                right: 0,
-                bottom: 0,
-                backgroundRepeat: 'no-repeat',
-                backgroundPosition: '50%',
-                backgroundSize: 'cover',
-                zIndex: -1,
-              }}
-            ></div>
-            <div class="bg-overlay"></div>
-
-            <div class="container">
-              <div class="row justify-content-center align-items-center">
-                <div class="col-md-8 col-lg-7"></div>
-              </div>
+        <div
+          className="container-fluid"
+          style={{
+            backgroundImage: `url(${background})`,
+            top: 0,
+            bottom: 0,
+            left: 0,
+            right: 0,
+            height: '100%',
+            backgroundRepeat: 'no-repeat',
+            backgroundPosition: '50%',
+            backgroundSize: 'cover',
+            zIndex: -1,
+          }}
+        >
+          <div className="container">
+            <div className="row justify-content-center align-items-center">
+              <div className="col-md-8 col-lg-7"></div>
             </div>
-          </section>
-          <div class="container">
+          </div>
+          <div className="container">
             <div className="row d-flex justify-content-center">
               <h1
                 className="text-white text-center my-5"
@@ -60,11 +54,11 @@ class Home extends Component {
                 Getaways
               </h1>
             </div>
-            <div class="row">
-              <div class="col-sm-5">
-                <div class="card mb-4">
-                  <div class="card-body">
-                    <h5 class="card-title">
+            <div className="row">
+              <div className="col-sm-5">
+                <div className="card mb-4">
+                  <div className="card-body">
+                    <h5 className="card-title">
                       Your perfect getaway is waiting for you
                     </h5>
                     <form>
@@ -91,7 +85,7 @@ class Home extends Component {
                             this.setState({ focusedInput })
                           } // PropTypes.func.isRequired,
                         />
-                        <div class="form-group">
+                        <div className="form-group">
                           <label
                             for="exampleFormControlSelect1"
                             className="mt-2 mb-1"
@@ -132,71 +126,77 @@ class Home extends Component {
             </div>
           </div>
         </div>
-        <div class="container-fluid container py-3 mt-4">
-          <h2 class="h3">What our guests have to say about us</h2>
-          <div class="row mt-4">
-            <div class="col-md-3">
-              <div class="card mb-3">
+        <div className="container-fluid container py-3 mt-4">
+          <h2 className="h3">What our guests have to say about us</h2>
+          <div className="row mt-4">
+            <div className="col-md-3">
+              <div className="card mb-3">
                 <img
                   src="https://images.unsplash.com/photo-1533654793924-4fc4949fb71e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1351&q=80"
-                  class="card-img-top"
+                  className="card-img-top"
                   alt="..."
                 />
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">
+                <div className="card-body">
+                  <h5 className="card-title">Card title</h5>
+                  <p className="card-text">
                     This is a wider card with supporting text below as a natural
                     lead-in to additional content. This content is a little bit
                     longer.
                   </p>
-                  <p class="card-text">
-                    <small class="text-muted">Last updated 3 mins ago</small>
+                  <p className="card-text">
+                    <small className="text-muted">
+                      Last updated 3 mins ago
+                    </small>
                   </p>
                 </div>
               </div>
             </div>
-            <div class="col-md-3">
-              <div class="card mb-3">
+            <div className="col-md-3">
+              <div className="card mb-3">
                 <img
                   src="https://images.unsplash.com/photo-1520908695049-da13395b27a6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1225&q=80"
-                  class="card-img-top"
+                  className="card-img-top"
                   alt="..."
                 />
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">
+                <div className="card-body">
+                  <h5 className="card-title">Card title</h5>
+                  <p className="card-text">
                     This is a wider card with supporting text below as a natural
                     lead-in to additional content. This content is a little bit
                     longer.
                   </p>
-                  <p class="card-text">
-                    <small class="text-muted">Last updated 3 mins ago</small>
+                  <p className="card-text">
+                    <small className="text-muted">
+                      Last updated 3 mins ago
+                    </small>
                   </p>
                 </div>
               </div>
             </div>
-            <div class="col-md-3">
-              <div class="card mb-3">
+            <div className="col-md-3">
+              <div className="card mb-3">
                 <img
                   src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80"
-                  class="card-img-top"
+                  className="card-img-top"
                   alt="..."
                 />
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">
+                <div className="card-body">
+                  <h5 className="card-title">Card title</h5>
+                  <p className="card-text">
                     This is a wider card with supporting text below as a natural
                     lead-in to additional content. This content is a little bit
                     longer.
                   </p>
-                  <p class="card-text">
-                    <small class="text-muted">Last updated 3 mins ago</small>
+                  <p className="card-text">
+                    <small className="text-muted">
+                      Last updated 3 mins ago
+                    </small>
                   </p>
                 </div>
               </div>
             </div>
           </div>
-          <div class="container-fluid container bg-success display-1">
+          <div className="container-fluid container bg-success display-1">
             3rd section
           </div>
         </div>
