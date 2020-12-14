@@ -10,8 +10,9 @@ font-family: 'Rock Salt', cursive; */
   min-height: calc(100vmax - 96px);
 }
 
-nav img {
+.logo {
   height: 2rem;
+  transition: all 0.2s ease-in-out;
 }
 
 .line1 {

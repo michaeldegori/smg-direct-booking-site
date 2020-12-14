@@ -33,7 +33,11 @@ const App = () => {
     <div className="App">
       <nav className="navbar navbar-expand-lg navbar-light bg-white sticky-top p-0">
         <NavLink to="/home" className="navbar-brand px-4 py-2">
-          <img src={logo} alt="smoky mountain getaways" />
+          <img
+            className={`${open && 'burger-open'} logo`}
+            src={logo}
+            alt="smoky mountain getaways"
+          />
         </NavLink>
         <Button
           className="burger rounded-pill bg-transparent border-0 px-4 py-2"
