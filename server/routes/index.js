@@ -42,17 +42,26 @@ router.post('/properties', authCheck, (req, res, next) => {
 // UPDATE EXISTING PROPERTY
 router.put('/properties/:id', authCheck, (req, res, next) => {
   Property.findByIdAndUpdate(req.params.id, req.body)
-    .then(() => res.send('Property Updated'))
-    .catch((err) => console.log('Update Submission Error', err));
+    .then(() => {
+      debugger;
+      res.send('Property Updated');
+    })
+    .catch((err) => {
+      debugger;
+      console.log('Update Submission Error', err);
+    });
 });
 
 // FOR PICTURE UPLOADS
 router.put('/properties/:id/photos', uploader.single('photos'), (req, res) => {
-  Property.findByIdAndUpdate(req.property._id, {
+  Property.findByIdAndUpdate(req.params.id, {
     photos: req.file.path,
   })
     .then((user) => res.send('Picture Uploaded'))
-    .catch((err) => res.status(500).send('Error'));
+    .catch((err) => {
+      console.log(err);
+      res.status(500).send('Error');
+    });
 });
 
 // VIEW DETAILS OF INDIVIDUAL PROPERTY

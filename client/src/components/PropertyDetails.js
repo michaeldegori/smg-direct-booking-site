@@ -17,6 +17,7 @@ const PropertyDetails = (props) => {
   return (
     <div>
       <h1>{property?.listingTitle}</h1>
+      <img src={property?.photos} style={{ width: '300px' }} alt="" />
       <Link to={`/properties/edit/${property?._id}`}>Edit Property</Link>
     </div>
   );

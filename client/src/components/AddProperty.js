@@ -3,11 +3,11 @@ import api from '../services/api';
 import { useHistory } from 'react-router-dom';
 import '../styles/EditProperty.css';
 
-const EditProperty = (props) => {
+const AddProperty = (props) => {
   const history = useHistory();
 
   const [photoFiles, setPhotoFiles] = useState(null);
-  const [propertyEdit, setPropertyEdit] = useState({
+  const [propertyDetails, setPropertyDetails] = useState({
     bedrooms: 0,
     bathrooms: 0,
     listingTitle: '',
@@ -26,7 +26,7 @@ const EditProperty = (props) => {
     api
       .get(`http://localhost:3000/properties/${props.match.params.id}`)
       .then((res) => {
-        setPropertyEdit(res.data);
+        setPropertyDetails(res.data);
       })
       .catch((err) => {});
   }, []);
@@ -41,8 +41,8 @@ const EditProperty = (props) => {
   };
 
   const handleChange = (event) => {
-    setPropertyEdit({
-      ...propertyEdit,
+    setPropertyDetails({
+      ...propertyDetails,
       [event.target.name]: event.target.value,
     });
   };
@@ -53,7 +53,7 @@ const EditProperty = (props) => {
 
     return api
       .put(
-        `http://localhost:3000/properties/${propertyEdit._id}/photos`,
+        `http://localhost:3000/properties/${propertyDetails._id}/photos`,
         formData
       )
       .then((res) => alert('Photos Uploaded Successfully'))
@@ -64,7 +64,10 @@ const EditProperty = (props) => {
 
   const submitEditProperty = (event) => {
     return api
-      .put(`http://localhost:3000/properties/${propertyEdit._id}`, propertyEdit)
+      .put(
+        `http://localhost:3000/properties/${propertyDetails._id}`,
+        propertyDetails
+      )
       .then((res) => {
         console.log('Property Updated');
       })
@@ -77,7 +80,7 @@ const EditProperty = (props) => {
     event.preventDefault();
     Promise.all([submitEditProperty(), uploadPhotos()])
       .then(() => {
-        history.push(`/properties/${propertyEdit._id}`);
+        history.push(`/properties/${propertyDetails._id}`);
       })
       .catch((err) => {
         console.log(err);
@@ -92,75 +95,75 @@ const EditProperty = (props) => {
           type="number"
           name="bedrooms"
           placeholder="# of bedrooms"
-          value={propertyEdit.bedrooms}
+          value={propertyDetails.bedrooms}
           onChange={handleChange}
         />
         <input
           type="number"
           name="bathrooms"
           placeholder="# of bathrooms"
-          value={propertyEdit.bathrooms}
+          value={propertyDetails.bathrooms}
           onChange={handleChange}
         />
         <input
           name="listingTitle"
           placeholder="listing title"
-          value={propertyEdit.listingTitle}
+          value={propertyDetails.listingTitle}
           onChange={handleChange}
         />
         <textarea
           name="description"
           placeholder="description"
-          value={propertyEdit.description}
+          value={propertyDetails.description}
           onChange={handleChange}
         />
         <input
           type="number"
           name="maxGuests"
           placeholder="max # of guests"
-          value={propertyEdit.maxGuests}
+          value={propertyDetails.maxGuests}
           onChange={handleChange}
         />
         <input
           name="address"
           placeholder="address"
-          value={propertyEdit.address}
+          value={propertyDetails.address}
           onChange={handleChange}
         />
         <textarea
           name="directions"
           placeholder="directions"
-          value={propertyEdit.directions}
+          value={propertyDetails.directions}
           onChange={handleChange}
         />
         <textarea
           name="checkinInstructions"
           placeholder="checkin instructions"
-          value={propertyEdit.checkinInstructions}
+          value={propertyDetails.checkinInstructions}
           onChange={handleChange}
         />
         <textarea
           name="wifiDetails"
           placeholder="wifi info"
-          value={propertyEdit.wifiDetails}
+          value={propertyDetails.wifiDetails}
           onChange={handleChange}
         />
         <input
           name="houseManual"
           placeholder="house manual link"
-          value={propertyEdit.houseManual}
+          value={propertyDetails.houseManual}
           onChange={handleChange}
         />
         <textarea
           name="houseRules"
           placeholder="house rules"
-          value={propertyEdit.houseRules}
+          value={propertyDetails.houseRules}
           onChange={handleChange}
         />
         <input
           name="cancellationPolicy"
           placeholder="cancellation policy"
-          value={propertyEdit.cancellationPolicy}
+          value={propertyDetails.cancellationPolicy}
           onChange={handleChange}
         />
         <button type="submit">Submit</button>

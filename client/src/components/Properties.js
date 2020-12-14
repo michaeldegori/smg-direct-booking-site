@@ -23,7 +23,12 @@ const Properties = (props) => {
     });
   };
 
-  return <div>{listProperties()}</div>;
+  return (
+    <div>
+      {listProperties()}
+      <Link to="/add-property">Add New Property</Link>
+    </div>
+  );
 };
 
 export default Properties;

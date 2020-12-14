@@ -35,7 +35,11 @@ const App = () => {
   return (
     <div className="App">
       <nav className="navbar navbar-expand-lg navbar-light bg-white fixed-top p-0">
-        <NavLink to="/home" className="navbar-brand px-4 py-2">
+        <NavLink
+          to="/home"
+          className="navbar-brand px-4 py-2"
+          onClick={() => setOpen(!open)}
+        >
           <img
             className={`${open && 'burger-open'} logo`}
             src={logo}
@@ -73,7 +77,7 @@ const App = () => {
                     className="nav-link text-dark p-0"
                     activeClassName="highlight"
                   >
-                    Our Properties
+                    Our Cabins
                   </NavLink>
                 </li>
                 <li className="nav-item my-3">
@@ -169,7 +173,7 @@ const App = () => {
               className="my-1 d-flex flex-column align-items-center"
             >
               <img src={cabinGlyph} alt="properties" />
-              <small className="text-dark m-0">properties</small>
+              <small className="text-dark m-0">Cabins</small>
             </Link>
           </div>
           <div className="col">
@@ -178,7 +182,7 @@ const App = () => {
               className="my-1 d-flex flex-column align-items-center"
             >
               <img src={aboutGlyph} alt="about us" />
-              <small className="text-dark m-0">about</small>
+              <small className="text-dark m-0">About</small>
             </Link>
           </div>
           <div className="col">
@@ -187,7 +191,7 @@ const App = () => {
               className="my-1 d-flex flex-column align-items-center"
             >
               <img src={contactGlyph} alt="contact us" />
-              <small className="text-dark m-0">contact</small>
+              <small className="text-dark m-0">Contact</small>
             </Link>
           </div>
         </div>
