@@ -17,6 +17,7 @@ const app = express();
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
+app.set('useFindAndModify', false);
 
 app.use(logger('dev'));
 app.use(express.json());
@@ -50,6 +51,7 @@ app.use((err, req, res, next) => {
 mongoose
   .connect(MONGODB_URI, {
     useCreateIndex: true,
+    useFindAndModify: false,
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })

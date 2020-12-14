@@ -6,13 +6,16 @@ import '../styles/EditProperty.css';
 const AddProperty = (props) => {
   const history = useHistory();
 
-  const [photoFiles, setPhotoFiles] = useState(null);
+  const [photoFiles, setPhotoFiles] = useState({
+    photos: null,
+  });
+
   const [propertyDetails, setPropertyDetails] = useState({
-    bedrooms: 0,
-    bathrooms: 0,
+    bedrooms: null,
+    bathrooms: null,
     listingTitle: '',
     description: '',
-    maxGuests: 0,
+    maxGuests: null,
     address: '',
     directions: '',
     checkinInstructions: '',
@@ -22,22 +25,10 @@ const AddProperty = (props) => {
     cancellationPolicy: '',
   });
 
-  useEffect(() => {
-    api
-      .get(`http://localhost:3000/properties/${props.match.params.id}`)
-      .then((res) => {
-        setPropertyDetails(res.data);
-      })
-      .catch((err) => {});
-  }, []);
-
-  // const handlePhotoFiles = (event) => {
-  //
-  //   setPhotoFiles(event.target.files[0]);
-  // };
-
   const handlePhotoFiles = (event) => {
-    setPhotoFiles(event.target.files[0]);
+    setPhotoFiles({
+      photos: event.target.files[0],
+    });
   };
 
   const handleChange = (event) => {
@@ -49,13 +40,10 @@ const AddProperty = (props) => {
 
   const uploadPhotos = () => {
     const formData = new FormData();
-    formData.append('photos', photoFiles);
+    formData.append('photos', photoFiles.photos);
 
     return api
-      .put(
-        `http://localhost:3000/properties/${propertyDetails._id}/photos`,
-        formData
-      )
+      .post('http://localhost:3000/properties/photos', formData)
       .then((res) => alert('Photos Uploaded Successfully'))
       .catch((err) => {
         alert('Upload Error');
@@ -64,19 +52,16 @@ const AddProperty = (props) => {
 
   const submitEditProperty = (event) => {
     return api
-      .put(
-        `http://localhost:3000/properties/${propertyDetails._id}`,
-        propertyDetails
-      )
+      .post('http://localhost:3000/properties/', propertyDetails)
       .then((res) => {
-        console.log('Property Updated');
+        console.log('Property Added');
       })
       .catch((err) => {
         console.log(err);
       });
   };
 
-  function submit(event) {
+  const submit = (event) => {
     event.preventDefault();
     Promise.all([submitEditProperty(), uploadPhotos()])
       .then(() => {
@@ -85,7 +70,7 @@ const AddProperty = (props) => {
       .catch((err) => {
         console.log(err);
       });
-  }
+  };
 
   return (
     <div>
@@ -172,4 +157,4 @@ const AddProperty = (props) => {
   );
 };
 
-export default EditProperty;
+export default AddProperty;

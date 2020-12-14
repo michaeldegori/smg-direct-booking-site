@@ -13,6 +13,7 @@ import Properties from './components/Properties';
 import PropertyDetails from './components/PropertyDetails';
 import Login from './components/Login';
 import EditProperty from './components/EditProperty';
+import AddProperty from './components/AddProperty';
 import cabinGlyph from './images/cabin-glyph.png';
 import contactGlyph from './images/contact-glyph.png';
 import aboutGlyph from './images/about-glyph.png';
@@ -38,7 +39,11 @@ const App = () => {
         <NavLink
           to="/home"
           className="navbar-brand px-4 py-2"
-          onClick={() => setOpen(!open)}
+          onClick={() => {
+            if (open) {
+              setOpen(!open);
+            }
+          }}
         >
           <img
             className={`${open && 'burger-open'} logo`}
@@ -145,6 +150,11 @@ const App = () => {
             exact
             path="/properties"
             render={(props) => <Properties {...props} />}
+          />
+          <Route
+            exact
+            path="/properties/add"
+            render={(props) => <AddProperty {...props} />}
           />
           <Route
             exact

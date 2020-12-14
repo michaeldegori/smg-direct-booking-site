@@ -26,7 +26,7 @@ const Properties = (props) => {
   return (
     <div>
       {listProperties()}
-      <Link to="/add-property">Add New Property</Link>
+      <Link to="/properties/add">Add New Property</Link>
     </div>
   );
 };

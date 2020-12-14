@@ -52,6 +52,18 @@ router.put('/properties/:id', authCheck, (req, res, next) => {
     });
 });
 
+// FOR PICTURE UPLOADS (NEWCABINS)
+router.post('/properties/photos', uploader.single('photos'), (req, res) => {
+  Property.findByIdAndUpdate(req.params.id, {
+    photos: req.file.path,
+  })
+    .then((user) => res.send('Picture Uploaded'))
+    .catch((err) => {
+      console.log(err);
+      res.status(500).send('Error');
+    });
+});
+
 // FOR PICTURE UPLOADS
 router.put('/properties/:id/photos', uploader.single('photos'), (req, res) => {
   Property.findByIdAndUpdate(req.params.id, {
