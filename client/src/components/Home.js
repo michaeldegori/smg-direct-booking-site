@@ -43,7 +43,7 @@ class Home extends Component {
             </h1>
           </div>
           <div className="row">
-            <div className="col-sm-4">
+            <div className="col-sm-4 px-0">
               <div className="card" style={{ width: '100%' }}>
                 <div className="card-body">
                   <h5 className="card-title">

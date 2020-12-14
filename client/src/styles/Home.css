@@ -19,7 +19,7 @@
   height: calc(100vh-90px);
 }
 
-body
+/* body
   > div:nth-child(10)
   > div
   > div
@@ -29,4 +29,4 @@ body
   > div.DayPicker_transitionContainer.DayPicker_transitionContainer_1.DayPicker_transitionContainer__vertical.DayPicker_transitionContainer__vertical_2
   > div {
   transform: translateY(75px);
-}
+} */
