@@ -6,6 +6,7 @@ import '../styles/EditProperty.css';
 const EditProperty = (props) => {
   const history = useHistory();
 
+  const [photoFiles, setPhotoFiles] = useState(null);
   const [propertyEdit, setPropertyEdit] = useState({
     photos: '',
     bedrooms: 0,
@@ -31,15 +32,35 @@ const EditProperty = (props) => {
       .catch((err) => {});
   }, []);
 
+  const handlePhotoFiles = (event) => {
+    debugger;
+    setPhotoFiles(event.target.files[0]);
+  };
+
   const handleChange = (event) => {
+    debugger;
     setPropertyEdit({
       ...propertyEdit,
       [event.target.name]: event.target.value,
     });
   };
 
+  const uploadPhotos = () => {
+    const formData = new FormData();
+    formData.append('photos', photoFiles);
+
+    api
+      .put(
+        `http://localhost:3000/properties/${propertyEdit._id}/photos`,
+        formData
+      )
+      .then((res) => alert('Photos Uploaded Successfully'))
+      .catch((err) => alert('Upload Error'));
+  };
+
   const submitEditProperty = (event) => {
     event.preventDefault();
+    uploadPhotos();
     api
       .put(`http://localhost:3000/properties/${propertyEdit._id}`, propertyEdit)
       .then((res) => {
@@ -54,13 +75,7 @@ const EditProperty = (props) => {
   return (
     <div>
       <form onSubmit={submitEditProperty}>
-        <input
-          type="file"
-          name="photos"
-          placeholder="photos"
-          value={propertyEdit.photos}
-          onChange={handleChange}
-        />
+        <input type="file" name="photos" onChange={handlePhotoFiles} />
         <input
           type="number"
           name="bedrooms"

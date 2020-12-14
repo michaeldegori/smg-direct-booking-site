@@ -1,21 +1,20 @@
 const cloudinary = require('cloudinary').v2;
 const { CloudinaryStorage } = require('multer-storage-cloudinary');
-const express = require('express');
 const multer = require('multer');
 
-const app = express();
+cloudinary.config({
+  cloud_name: process.env.cloud_name,
+  api_key: process.env.api_key,
+  api_secret: process.env.api_secret,
+});
 
 const storage = new CloudinaryStorage({
-  cloudinary: cloudinary,
-  params: {
-    folder: 'some-folder-name',
-    format: async (req, file) => 'png', // supports promises as well
-    public_id: (req, file) => 'computed-filename-using-request',
+  cloudinary,
+  folder: 'property-pics',
+  allowedFormats: ['jpg', 'png'],
+  filename: function (req, res, cb) {
+    cb(null, res.originalname);
   },
 });
 
-const parser = multer({ storage: storage });
-
-app.post('/upload', parser.single('image'), function (req, res) {
-  res.json(req.file);
-});
+module.exports = multer({ storage });

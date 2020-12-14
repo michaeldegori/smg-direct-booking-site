@@ -7,6 +7,7 @@ const bodyParser = require('body-parser');
 const MONGODB_URI = 'mongodb://localhost:27017/smg-direct-booking-site';
 const logger = require('morgan');
 const cors = require('cors');
+require('dotenv').config();
 
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');

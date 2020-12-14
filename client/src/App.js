@@ -22,6 +22,7 @@ import Collapse from 'react-bootstrap/Collapse';
 
 const App = () => {
   const [open, setOpen] = useState(false);
+  // const [isLoggedIn, setIsLoggedIn] = use(false);
   const history = useHistory();
 
   const logout = () => {
@@ -29,9 +30,11 @@ const App = () => {
     history.push('/home');
   };
 
+  let isLoggedIn = !!localStorage.getItem('token');
+
   return (
     <div className="App">
-      <nav className="navbar navbar-expand-lg navbar-light bg-white sticky-top p-0">
+      <nav className="navbar navbar-expand-lg navbar-light bg-white fixed-top p-0">
         <NavLink to="/home" className="navbar-brand px-4 py-2">
           <img
             className={`${open && 'burger-open'} logo`}
@@ -123,6 +126,10 @@ const App = () => {
           </div>
         </Collapse>
       </nav>
+      <div
+        className="navbar-spacercontainer w-100"
+        style={{ height: '51px' }}
+      ></div>
 
       <Switch>
         <body>
@@ -153,7 +160,8 @@ const App = () => {
         </body>
       </Switch>
 
-      <footer className="container bg-primary fixed-bottom">
+      <div className="container w-100" style={{ height: '51px' }}></div>
+      <footer className="container w-100 bg-primary fixed-bottom">
         <div className="row">
           <div className="col">
             <Link

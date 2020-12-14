@@ -3,6 +3,7 @@ const router = express.Router();
 const Property = require('../models/Property');
 const User = require('../models/User');
 const jwt = require('jsonwebtoken');
+const uploader = require('../config/cloudinary-setup');
 
 const authCheck = (req, res, next) => {
   let token = req.headers?.authorization?.split(' ')[1];
@@ -22,7 +23,7 @@ const authCheck = (req, res, next) => {
     .catch((err) => console.log(err, 'Error'));
 };
 
-// ALL PROPERTIES
+// GET ALL PROPERTIES
 router.get('/properties', (req, res) => {
   Property.find()
     .then((properties) => res.status(200).json(properties))
@@ -43,6 +44,15 @@ router.put('/properties/:id', authCheck, (req, res, next) => {
   Property.findByIdAndUpdate(req.params.id, req.body)
     .then(() => res.send('Property Updated'))
     .catch((err) => console.log('Update Submission Error', err));
+});
+
+// FOR PICTURE UPLOADS
+router.put('/properties/:id/photos', uploader.single('photos'), (req, res) => {
+  Property.findByIdAndUpdate(req.property._id, {
+    photos: req.file.path,
+  })
+    .then((user) => res.send('Picture Uploaded'))
+    .catch((err) => res.status(500).send('Error'));
 });
 
 // VIEW DETAILS OF INDIVIDUAL PROPERTY

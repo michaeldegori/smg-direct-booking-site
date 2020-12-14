@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const propertySchema = new Schema({
@@ -14,7 +14,7 @@ const propertySchema = new Schema({
   wifiDetails: String,
   houseManual: String,
   houseRules: String,
-  cancellationPolicy: String
+  cancellationPolicy: String,
 });
 
-module.exports = mongoose.model("Property", propertySchema, "properties");
+module.exports = mongoose.model('Property', propertySchema, 'properties');
