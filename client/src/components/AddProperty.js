@@ -38,37 +38,20 @@ const AddProperty = (props) => {
     });
   };
 
-  const uploadPhotos = () => {
+  const submit = (e) => {
+    e.preventDefault();
     const formData = new FormData();
     formData.append('photos', photoFiles.photos);
 
+    Object.keys(propertyDetails).forEach((detailKey) => {
+      formData.append(detailKey, propertyDetails[detailKey]);
+    });
+
     return api
-      .post('http://localhost:3000/properties/photos', formData)
+      .post('http://localhost:3000/properties', formData)
       .then((res) => alert('Photos Uploaded Successfully'))
       .catch((err) => {
         alert('Upload Error');
-      });
-  };
-
-  const submitEditProperty = (event) => {
-    return api
-      .post('http://localhost:3000/properties/', propertyDetails)
-      .then((res) => {
-        console.log('Property Added');
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  };
-
-  const submit = (event) => {
-    event.preventDefault();
-    Promise.all([submitEditProperty(), uploadPhotos()])
-      .then(() => {
-        history.push(`/properties/${propertyDetails._id}`);
-      })
-      .catch((err) => {
-        console.log(err);
       });
   };
 

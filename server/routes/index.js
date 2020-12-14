@@ -33,11 +33,16 @@ router.get('/properties', (req, res) => {
 });
 
 // SUBMIT NEW PROPERTY
-router.post('/properties', authCheck, (req, res, next) => {
-  Property.create(req.body)
-    .then(() => res.send('New Property Submitted'))
-    .catch((err) => res.status(500).send('Submission Error' + err));
-});
+router.post(
+  '/properties',
+  authCheck,
+  uploader.single('photos'),
+  (req, res, next) => {
+    Property.create({ ...req.body, photos: req.file.path })
+      .then(() => res.send('New Property Submitted'))
+      .catch((err) => res.status(500).send('Submission Error' + err));
+  }
+);
 
 // UPDATE EXISTING PROPERTY
 router.put('/properties/:id', authCheck, (req, res, next) => {

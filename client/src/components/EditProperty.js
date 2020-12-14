@@ -86,6 +86,7 @@ const EditProperty = (props) => {
 
   return (
     <div>
+      <h1>EDIT</h1>
       <form onSubmit={submit}>
         <input type="file" name="photos" onChange={handlePhotoFiles} />
         <input

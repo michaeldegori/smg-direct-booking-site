@@ -19,7 +19,16 @@ class Home extends Component {
 
   render() {
     return (
-      <div className="home container-fluid">
+      <section className="home container-fluid">
+        <div class="container-fluid container bg-primary display-1">
+          1st section
+        </div>
+        <div class="container-fluid container bg-secondary display-1">
+          2nd section
+        </div>
+        <div class="container-fluid container bg-success display-1">
+          3rd section
+        </div>
         <div className="background-wrapper">
           <img
             src={background}
@@ -114,7 +123,7 @@ class Home extends Component {
             </div>
           </div>
         </div>
-      </div>
+      </section>
     );
   }
 }
