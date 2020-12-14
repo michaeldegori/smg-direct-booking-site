@@ -20,7 +20,7 @@ class Home extends Component {
   render() {
     return (
       <section className="home">
-        <div class="container-fluid">
+        <div class="container-fluid" style={{ height: '100vh' }}>
           <section class="section section-top section-full">
             <div
               class="bg-cover"
@@ -31,7 +31,7 @@ class Home extends Component {
                 bottom: 0,
                 left: 0,
                 right: 0,
-                bottom: '10%',
+                bottom: 0,
                 backgroundRepeat: 'no-repeat',
                 backgroundPosition: '50%',
                 backgroundSize: 'cover',
@@ -132,38 +132,72 @@ class Home extends Component {
             </div>
           </div>
         </div>
-        <div class="container-fluid container bg-secondary display-1">
-          2nd section
-        </div>
-        <div class="container-fluid container bg-success display-1">
-          3rd section
-        </div>
-
-        <div className="container">
-          <div className="row d-flex justify-content-center">
-            <h1
-              className="text-white text-center my-5"
-              style={{
-                fontFamily: 'Rock Salt, cursive',
-                lineHeight: '3.5rem',
-              }}
-            >
-              Smoky Mountain
-              <br />
-              Getaways
-            </h1>
-          </div>
-          <div className="row">
-            <div className="col-sm-4 px-0">
-              <div className="card" style={{ width: '100%' }}>
-                <div className="card-body">
-                  <h5 className="card-title">
-                    Find the time to get away to one of our gorgeous mountain
-                    cabins
-                  </h5>
+        <div class="container-fluid container py-3 mt-4">
+          <h2 class="h3">What our guests have to say about us</h2>
+          <div class="row mt-4">
+            <div class="col-md-3">
+              <div class="card mb-3">
+                <img
+                  src="https://images.unsplash.com/photo-1533654793924-4fc4949fb71e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1351&q=80"
+                  class="card-img-top"
+                  alt="..."
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">
+                    This is a wider card with supporting text below as a natural
+                    lead-in to additional content. This content is a little bit
+                    longer.
+                  </p>
+                  <p class="card-text">
+                    <small class="text-muted">Last updated 3 mins ago</small>
+                  </p>
                 </div>
               </div>
             </div>
+            <div class="col-md-3">
+              <div class="card mb-3">
+                <img
+                  src="https://images.unsplash.com/photo-1520908695049-da13395b27a6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1225&q=80"
+                  class="card-img-top"
+                  alt="..."
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">
+                    This is a wider card with supporting text below as a natural
+                    lead-in to additional content. This content is a little bit
+                    longer.
+                  </p>
+                  <p class="card-text">
+                    <small class="text-muted">Last updated 3 mins ago</small>
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="card mb-3">
+                <img
+                  src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80"
+                  class="card-img-top"
+                  alt="..."
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">
+                    This is a wider card with supporting text below as a natural
+                    lead-in to additional content. This content is a little bit
+                    longer.
+                  </p>
+                  <p class="card-text">
+                    <small class="text-muted">Last updated 3 mins ago</small>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="container-fluid container bg-success display-1">
+            3rd section
           </div>
         </div>
       </section>
