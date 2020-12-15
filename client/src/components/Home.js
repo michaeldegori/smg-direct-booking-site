@@ -1,6 +1,8 @@
 import React, { useState, Component } from 'react';
 import '../styles/Home.css';
-import magGlyph from '../images/mag-glyph.png';
+import walkerLiving from '../images/walker-living.jpeg';
+import easyPorch from '../images/easy-porch.jpeg';
+import walkerView from '../images/walker-view.webp';
 import background from '../images/smoky-background.jpg';
 import {
   DateRangePicker,
@@ -131,21 +133,25 @@ class Home extends Component {
           <div className="row mt-4">
             <div className="col-md-3">
               <div className="card mb-3">
-                <img
-                  src="https://images.unsplash.com/photo-1533654793924-4fc4949fb71e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1351&q=80"
-                  className="card-img-top"
-                  alt="..."
-                />
+                <img src={walkerLiving} className="card-img-top" alt="..." />
                 <div className="card-body">
-                  <h5 className="card-title">Card title</h5>
+                  <h5 class="card-title text-danger">
+                    &#9733; &#9733; &#9733; &#9733; &#9733;
+                  </h5>
                   <p className="card-text">
-                    This is a wider card with supporting text below as a natural
-                    lead-in to additional content. This content is a little bit
-                    longer.
+                    Awesome! Amazing! Beautiful! I cannot say enough about this
+                    cabin and our long weekend in the mountains. This cabin had
+                    anything and everything that we needed. It was immaculate
+                    and smelled so good when we walked inside. We loved it and
+                    the plus was that it's close to everything that you need or
+                    want. We made a couple of trips to the Pigeon Forge Island,
+                    which by the way, was AMAZING!!! I would definitely
+                    recommend this cabin and my whole family agreed this will be
+                    a family tradition. Great host also.
                   </p>
                   <p className="card-text">
                     <small className="text-muted">
-                      Last updated 3 mins ago
+                      - Paulette, Walker's Retreat
                     </small>
                   </p>
                 </div>
@@ -153,21 +159,23 @@ class Home extends Component {
             </div>
             <div className="col-md-3">
               <div className="card mb-3">
-                <img
-                  src="https://images.unsplash.com/photo-1520908695049-da13395b27a6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1225&q=80"
-                  className="card-img-top"
-                  alt="..."
-                />
+                <img src={easyPorch} className="card-img-top" alt="..." />
                 <div className="card-body">
-                  <h5 className="card-title">Card title</h5>
+                  <h5 class="card-title text-danger">
+                    &#9733; &#9733; &#9733; &#9733; &#9733;
+                  </h5>
                   <p className="card-text">
-                    This is a wider card with supporting text below as a natural
-                    lead-in to additional content. This content is a little bit
-                    longer.
+                    We really enjoyed our stay, Michael is very responsive and
+                    helped us immediately for whatever we asked. Cabin has lot
+                    of amenities and location is one of the best. It has lot of
+                    space for recreational activities and stunning view from all
+                    the sides. It's very clean and exactly as shown in the pics.
+                    We will definitely book other properties offered by Michael
+                    and will book this whenever we visit Smokey mountain again.
                   </p>
                   <p className="card-text">
                     <small className="text-muted">
-                      Last updated 3 mins ago
+                      -Chhayank, Easy's Retreat
                     </small>
                   </p>
                 </div>
@@ -175,21 +183,29 @@ class Home extends Component {
             </div>
             <div className="col-md-3">
               <div className="card mb-3">
-                <img
-                  src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80"
-                  className="card-img-top"
-                  alt="..."
-                />
+                <img src={walkerView} className="card-img-top" alt="..." />
                 <div className="card-body">
-                  <h5 className="card-title">Card title</h5>
+                  <h5 class="card-title text-danger">
+                    &#9733; &#9733; &#9733; &#9733; &#9733;
+                  </h5>
                   <p className="card-text">
-                    This is a wider card with supporting text below as a natural
-                    lead-in to additional content. This content is a little bit
-                    longer.
+                    This was a great place to stay. A short drive to
+                    entertainment, food, entertainment, and of course, the
+                    National Park. We really enjoyed the option of eating
+                    breakfast and dinner here and saving a few extra dollars for
+                    entertainment. You could just stay on the deck and enjoy the
+                    privacy and beautiful views but you should definitely visit
+                    the parks and some of the local distilleries... in that
+                    order. The rooms were clean, comfortable, and was nicely
+                    decorated to give it a cabin-like feel. This was great for a
+                    couple's get-away and also had a nice collection of games
+                    for family time. The hot tub and gas grill were nice
+                    touches. When we come back to this area we will certainly
+                    stay here again. Thanks Michael and Debra!
                   </p>
                   <p className="card-text">
                     <small className="text-muted">
-                      Last updated 3 mins ago
+                      -Scott, Walker's Retreat
                     </small>
                   </p>
                 </div>

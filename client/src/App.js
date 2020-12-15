@@ -63,7 +63,10 @@ const App = () => {
         </Button>
         <Collapse in={open}>
           <div className="navbar-collapse px-0" id="navbarNav">
-            <div className="full-height-nav bg-white p-0 d-flex justify-content-center align-items-center">
+            <div
+              className="bg-white pb-5 d-flex justify-content-center align-items-center"
+              style={{ minHeight: 'calc(100vmax - 100px)' }}
+            >
               <ul className="show navbar-nav text-center">
                 <li className="nav-item my-3 active">
                   <NavLink
