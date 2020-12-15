@@ -8,6 +8,7 @@ import {
   Route,
   useHistory,
 } from 'react-router-dom';
+import PrivateRoute from './components/PrivateRoute';
 import Home from './components/Home';
 import Properties from './components/Properties';
 import PropertyDetails from './components/PropertyDetails';
@@ -35,7 +36,7 @@ const App = () => {
 
   return (
     <div className="App">
-      <nav className="navbar navbar-expand-lg navbar-light bg-white fixed-top p-0">
+      <nav className="navbar navbar-light bg-white fixed-top p-0">
         <NavLink
           to="/home"
           className="navbar-brand px-4 py-2"
@@ -154,7 +155,7 @@ const App = () => {
             path="/properties"
             render={(props) => <Properties {...props} />}
           />
-          <Route
+          <PrivateRoute
             exact
             path="/properties/add"
             render={(props) => <AddProperty {...props} />}
@@ -169,7 +170,7 @@ const App = () => {
             path="/users/login"
             render={(props) => <Login {...props} />}
           />
-          <Route
+          <PrivateRoute
             exact
             path="/properties/edit/:id"
             render={(props) => <EditProperty {...props} />}
@@ -178,7 +179,10 @@ const App = () => {
       </Switch>
 
       <div className="container w-100" style={{ height: '51px' }}></div>
-      <footer className="container w-100 bg-primary fixed-bottom">
+      <footer
+        className="bg-primary fixed-bottom m-0"
+        style={{ width: '100vw' }}
+      >
         <div className="row">
           <div className="col">
             <Link

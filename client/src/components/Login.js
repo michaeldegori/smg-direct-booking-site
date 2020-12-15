@@ -25,7 +25,6 @@ const Login = () => {
       .post('http://localhost:3000/users/login', userLogin)
       .then((response) => {
         console.log('User logged in!');
-        debugger;
         localStorage.setItem('token', response.data.token);
         history.push(`/properties`);
       })

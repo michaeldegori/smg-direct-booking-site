@@ -41,11 +41,6 @@ class Home extends Component {
           }}
         >
           <div className="container">
-            <div className="row justify-content-center align-items-center">
-              <div className="col-md-8 col-lg-7"></div>
-            </div>
-          </div>
-          <div className="container">
             <div className="row d-flex justify-content-center">
               <h1
                 className="text-white text-center my-5"
@@ -60,8 +55,8 @@ class Home extends Component {
                 Getaways
               </h1>
             </div>
-            <div className="row">
-              <div className="col-sm-5">
+            <div className="row d-flex justify-content-end">
+              <div className="col-sm-6">
                 <div className="card mb-4">
                   <div className="card-body">
                     <h5 className="card-title">
@@ -135,7 +130,7 @@ class Home extends Component {
         <div className="container-fluid container py-3 mt-4">
           <h3>What our guests have to say about us</h3>
           <div className="row mt-4">
-            <div className="col-md-3">
+            <div className="col-md-4">
               <div className="card mb-3">
                 <img src={walkerLiving} className="card-img-top" alt="..." />
                 <div className="card-body">
@@ -161,7 +156,7 @@ class Home extends Component {
                 </div>
               </div>
             </div>
-            <div className="col-md-3">
+            <div className="col-md-4">
               <div className="card mb-3">
                 <img src={easyPorch} className="card-img-top" alt="..." />
                 <div className="card-body">
@@ -185,7 +180,7 @@ class Home extends Component {
                 </div>
               </div>
             </div>
-            <div className="col-md-3">
+            <div className="col-md-4">
               <div className="card mb-3">
                 <img src={walkerView} className="card-img-top" alt="..." />
                 <div className="card-body">
@@ -221,7 +216,7 @@ class Home extends Component {
               Traveling with Smoky Mountain Getaways
             </h3>
             <div className="row mt-4">
-              <div className="col-md-3">
+              <div className="col-md-4">
                 <div className="card mb-3 border-0">
                   <img
                     src={heartGlyph}
@@ -241,11 +236,11 @@ class Home extends Component {
                   </div>
                 </div>
               </div>
-              <div className="col-md-3">
+              <div className="col-md-4">
                 <div className="card mb-3 border-0">
                   <img
                     src={cabinGlyph}
-                    style={{ width: '3rem', height: 'auto' }}
+                    style={{ width: '2.9rem', height: 'auto' }}
                     alt=""
                   />
                   <div className="card-body pl-0">
@@ -261,21 +256,17 @@ class Home extends Component {
                   </div>
                 </div>
               </div>
-              <div className="col-md-3">
+              <div className="col-md-4">
                 <div className="card mb-3 border-0">
                   <img
                     src={serviceGlyph}
-                    style={{ width: '3rem', height: 'auto' }}
+                    style={{ width: '3.1rem', height: 'auto' }}
                     alt=""
                   />
-                  <g fill-rule="evenodd" clip-rule="evenodd">
-                    <path d="M9 17l3-2.94c-.39-.04-.68-.06-1-.06-2.67 0-8 1.34-8 4v2h9l-3-3zm2-5c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4" />
-                    <path d="M15.47 20.5L12 17l1.4-1.41 2.07 2.08 5.13-5.17 1.4 1.41z" />
-                  </g>
                   <div className="card-body pl-0">
                     <h5 className="card-title text-danger">5-star hosts</h5>
                     <p className="card-text">
-                      We have a 4.93-star lifetime rating on Airbnb, VRBO and
+                      We have a 4.9+ star lifetime rating on Airbnb, VRBO and
                       HomeAway. The way we see it, 5-star service should be our
                       baseline. We strive to give just that <i>little bit</i>{' '}
                       extra to make your time completely{' '}

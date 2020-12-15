@@ -38,18 +38,22 @@ const AddProperty = (props) => {
     });
   };
 
-  const submit = (e) => {
-    e.preventDefault();
+  const submit = (event) => {
+    event.preventDefault();
     const formData = new FormData();
     formData.append('photos', photoFiles.photos);
-
+    debugger;
     Object.keys(propertyDetails).forEach((detailKey) => {
+      debugger;
       formData.append(detailKey, propertyDetails[detailKey]);
     });
 
     return api
       .post('http://localhost:3000/properties', formData)
-      .then((res) => alert('Photos Uploaded Successfully'))
+      .then((res) => {
+        history.push('/properties');
+        console.log('Property Uploaded Successfully');
+      })
       .catch((err) => {
         alert('Upload Error');
       });
