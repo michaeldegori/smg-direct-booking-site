@@ -134,7 +134,7 @@ class Home extends Component {
                   src={walkerLiving}
                   className="card-img-top"
                   style={{
-                    height: '30vh',
+                    height: '15rem',
                     objectFit: 'cover',
                   }}
                   alt="..."
@@ -168,7 +168,7 @@ class Home extends Component {
                   src={easyPorch}
                   className="card-img-top"
                   style={{
-                    height: '30vh',
+                    height: '15rem',
                     objectFit: 'cover',
                   }}
                   alt="..."
@@ -200,7 +200,7 @@ class Home extends Component {
                   src={walkerView}
                   className="card-img-top"
                   style={{
-                    height: '30vh',
+                    height: '15rem',
                     objectFit: 'cover',
                   }}
                   alt="..."
@@ -233,93 +233,90 @@ class Home extends Component {
               </div>
             </div>
           </div>
-
-          <div className="container-fluid">
-            <hr />
-            <h3 className="text-dark">
-              Traveling with Smoky Mountain Getaways
-            </h3>
-            <div className="row mt-4">
-              <div className="col-md-4 d-flex align-items-stretch">
-                <div className="card mb-3">
-                  <div className="card-body">
-                    <img
-                      src={heartGlyph}
-                      style={{ width: '3rem', height: 'auto' }}
-                      alt=""
-                    />
-                    <div className="card-body pl-0">
-                      <h5 className="card-title text-danger">
-                        Always serving you
-                      </h5>
-                      <p className="card-text">
-                        We’re here for <strong>you</strong>. Our hope is that
-                        you'll feel like you're a guest in our own home. We'll
-                        always go out of our way to make your stay as{' '}
-                        <i>memorable</i> as possible.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="col-md-4 d-flex align-items-stretch">
-                <div className="card mb-3 ">
-                  <div className="card-body">
-                    <img
-                      src={cabinGlyph}
-                      style={{ width: '2.9rem', height: 'auto' }}
-                      alt=""
-                    />
-                    <div className="card-body pl-0">
-                      <h5 className="card-title text-danger">
-                        Decades of hospitality
-                      </h5>
-                      <p className="card-text">
-                        We have half a century in combined hospitality
-                        experience. Our standards of cleaning and service are
-                        based on years of <strong>hard-work</strong> and{' '}
-                        <strong>dedication</strong> to the craft.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="col-md-4 d-flex align-items-stretch">
-                <div className="card mb-3 ">
-                  <div className="card-body">
-                    <img
-                      src={serviceGlyph}
-                      style={{ width: '3.1rem', height: 'auto' }}
-                      alt=""
-                    />
-                    <div className="card-body pl-0">
-                      <h5 className="card-title text-danger">5-star hosts</h5>
-                      <p className="card-text">
-                        We have a 4.9+ star lifetime rating on Airbnb, VRBO and
-                        HomeAway. The way we see it, 5-star service should be
-                        our baseline. We strive to give just that{' '}
-                        <i>little bit</i> extra to make your time completely{' '}
-                        <strong>magical.</strong>
-                      </p>
-                    </div>
+        </div>
+        <div className="container-xl">
+          <hr />
+          <h3 className="text-dark">Traveling with Smoky Mountain Getaways</h3>
+          <div className="row mt-4">
+            <div className="col-md-4 d-flex align-items-stretch">
+              <div className="card mb-3">
+                <div className="card-body">
+                  <img
+                    src={heartGlyph}
+                    style={{ width: '3rem', height: 'auto' }}
+                    alt=""
+                  />
+                  <div className="card-body pl-0">
+                    <h5 className="card-title text-danger">
+                      Always serving you
+                    </h5>
+                    <p className="card-text">
+                      We’re here for <strong>you</strong>. Our hope is that
+                      you'll feel like you're a guest in our own home. We'll
+                      always go out of our way to make your stay as{' '}
+                      <i>memorable</i> as possible.
+                    </p>
                   </div>
                 </div>
               </div>
             </div>
-            <hr />
-            <div className="container">
-              <div className="row">
-                <div className="col-12 pl-0 mb-2">
-                  <h2 className="h3  mt-0 mb-2">When are you traveling?</h2>
-                  <p className="mt-0 ml-0 mb-2">
-                    Add dates for updated pricing and availability.
-                  </p>
-                  <a href="#title">
-                    <button className="btn btn-primary text-white">
-                      Add dates
-                    </button>
-                  </a>
+            <div className="col-md-4 d-flex align-items-stretch">
+              <div className="card mb-3 ">
+                <div className="card-body">
+                  <img
+                    src={cabinGlyph}
+                    style={{ width: '2.9rem', height: 'auto' }}
+                    alt=""
+                  />
+                  <div className="card-body pl-0">
+                    <h5 className="card-title text-danger">
+                      Decades of hospitality
+                    </h5>
+                    <p className="card-text">
+                      We have half a century in combined hospitality experience.
+                      Our standards of cleaning and service are based on years
+                      of <strong>hard-work</strong> and{' '}
+                      <strong>dedication</strong> to the craft.
+                    </p>
+                  </div>
                 </div>
+              </div>
+            </div>
+            <div className="col-md-4 d-flex align-items-stretch">
+              <div className="card mb-3 ">
+                <div className="card-body">
+                  <img
+                    src={serviceGlyph}
+                    style={{ width: '3.1rem', height: 'auto' }}
+                    alt=""
+                  />
+                  <div className="card-body pl-0">
+                    <h5 className="card-title text-danger">5-star hosts</h5>
+                    <p className="card-text">
+                      We have a 4.9+ star lifetime rating on Airbnb, VRBO and
+                      HomeAway. The way we see it, 5-star service should be our
+                      baseline. We strive to give just that <i>little bit</i>{' '}
+                      extra to make your time completely{' '}
+                      <strong>magical.</strong>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <hr />
+          <div className="container">
+            <div className="row">
+              <div className="col-12 pl-0 mb-2">
+                <h2 className="h3  mt-0 mb-2">When are you traveling?</h2>
+                <p className="mt-0 ml-0 mb-2">
+                  Add dates for updated pricing and availability.
+                </p>
+                <a href="#title">
+                  <button className="btn btn-primary text-white">
+                    Add dates
+                  </button>
+                </a>
               </div>
             </div>
           </div>

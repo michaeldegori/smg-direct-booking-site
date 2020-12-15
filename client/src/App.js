@@ -42,39 +42,43 @@ const App = (props) => {
     <div className="App">
       <header>
         <nav className="navbar navbar-expand-md navbar-default navbar-light navbar-inverse navbar-fixed-top bg-white p-0">
-          <div className="container-fluid px-0">
+          <div className="container-xl px-0 d-flex justify-content-center">
             <div className="navbar-header  w-100 d-flex justify-content-between">
-              <NavLink
-                to="/home"
-                className="navbar-brand px-3 py-2"
-                onClick={() => {
-                  if (open) {
-                    setOpen(!open);
-                  }
-                }}
-              >
-                <img
-                  className={`${open && 'burger-open'} logo`}
-                  src={logo}
-                  alt="smoky mountain getaways"
-                />
-              </NavLink>
-              <Button
-                className="d-md-none burger rounded-pill bg-transparent border-0 px-3 py-2 "
-                onClick={() => setOpen(!open)}
-                aria-controls="example-fade-text"
-                aria-expanded={open}
-              >
-                <div
-                  className={`${open && 'burger-open'} line1 rounded-pill`}
-                ></div>
-                <div
-                  className={`${open && 'burger-open'} line2 rounded-pill`}
-                ></div>
-                <div
-                  className={`${open && 'burger-open'} line3 rounded-pill`}
-                ></div>
-              </Button>
+              <div className="col p-0">
+                <NavLink
+                  to="/home"
+                  className="navbar-brand px-3 py-2"
+                  onClick={() => {
+                    if (open) {
+                      setOpen(!open);
+                    }
+                  }}
+                >
+                  <img
+                    className={`${open && 'burger-open'} logo`}
+                    src={logo}
+                    alt="smoky mountain getaways"
+                  />
+                </NavLink>
+              </div>
+              <div className="col p-0 d-flex justify-content-end">
+                <Button
+                  className="d-md-none burger rounded-pill bg-transparent border-0 px-3 py-2 "
+                  onClick={() => setOpen(!open)}
+                  aria-controls="example-fade-text"
+                  aria-expanded={open}
+                >
+                  <div
+                    className={`${open && 'burger-open'} line1 rounded-pill`}
+                  ></div>
+                  <div
+                    className={`${open && 'burger-open'} line2 rounded-pill`}
+                  ></div>
+                  <div
+                    className={`${open && 'burger-open'} line3 rounded-pill`}
+                  ></div>
+                </Button>
+              </div>
             </div>
 
             <div
@@ -83,8 +87,15 @@ const App = (props) => {
               } navbar-collapse px-0 navbar-expand-lg`}
               id="navbarNav"
             >
-              <div className="bg-white d-flex justify-content-center align-items-center">
-                <ul className="show navbar-nav text-center">
+              <div
+                className={`bg-white ${
+                  open && 'd-flex justify-content-center align-items-center'
+                }`}
+              >
+                <ul
+                  className="show navbar-nav text-center d-flex justify-content-between align-items-center"
+                  style={{ width: '600px' }}
+                >
                   {user ? (
                     <li className="nav-item mb-5 active">
                       <h5>Hey there, {user?.firstName}!</h5>
@@ -136,6 +147,16 @@ const App = (props) => {
                   ) : (
                     <>
                       <li className="nav-item my-3">
+                        <NavLink
+                          onClick={() => setOpen(!open)}
+                          to="/users/signup"
+                          className="nav-link text-primary p-0"
+                          activeClassName="highlight"
+                        >
+                          Sign Up
+                        </NavLink>
+                      </li>
+                      <li className="nav-item my-3">
                         <button className="btn btn-sm btn-primary rounded-pill text-dark py-0 px-3">
                           <NavLink
                             onClick={() => setOpen(!open)}
@@ -147,16 +168,6 @@ const App = (props) => {
                             Login
                           </NavLink>
                         </button>
-                      </li>
-                      <li className="nav-item my-3">
-                        <NavLink
-                          onClick={() => setOpen(!open)}
-                          to="/users/signup"
-                          className="nav-link text-dark p-0"
-                          activeClassName="highlight"
-                        >
-                          Sign Up
-                        </NavLink>
                       </li>
                     </>
                   )}
@@ -213,7 +224,7 @@ const App = (props) => {
 
       <div className="container w-100" style={{ height: '51px' }}></div>
       <footer
-        className="bg-primary fixed-bottom m-0"
+        className="d-md-none bg-primary fixed-bottom m-0"
         style={{ width: '100vw' }}
       >
         <div className="row">
