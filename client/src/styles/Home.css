@@ -1,32 +1,3 @@
-.background-wrapper {
-  position: fixed;
-  top: 0px;
-  height: 100%;
-  z-index: -1;
+.card {
+  background-color: rgba(255, 255, 255, 0.6) !important;
 }
-
-.bg-img {
-  position: relative;
-  left: -31%;
-  height: 100vmax;
-}
-
-.search-btn {
-  height: 1.8rem;
-}
-
-.CalendarMonthGrid {
-  height: calc(100vh-90px);
-}
-
-/* body
-  > div:nth-child(10)
-  > div
-  > div
-  > div
-  > div
-  > div.DayPicker_focusRegion.DayPicker_focusRegion_1
-  > div.DayPicker_transitionContainer.DayPicker_transitionContainer_1.DayPicker_transitionContainer__vertical.DayPicker_transitionContainer__vertical_2
-  > div {
-  transform: translateY(75px);
-} */

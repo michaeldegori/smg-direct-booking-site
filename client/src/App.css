@@ -4,6 +4,12 @@ font-family: 'Rock Salt', cursive; */
 * {
   font-family: 'Montserrat', sans-serif;
 }
+
+.full-height-nav {
+  transition: all 0.2s ease-in-out;
+  min-height: calc(100vmax - 96px);
+}
+
 .logo {
   height: 2rem;
   transition: all 0.2s ease-in-out;
