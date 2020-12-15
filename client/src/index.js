@@ -8,11 +8,14 @@ import './custom.scss';
 import 'react-dates/initialize';
 import 'react-dates/lib/css/_datepicker.css';
 import './styles/react_dates_overrides.css';
+import UserProvider from './contexts/User';
 
 ReactDOM.render(
-  <BrowserRouter>
-    <App />
-  </BrowserRouter>,
+  <UserProvider>
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  </UserProvider>,
   document.getElementById('root')
 );
 

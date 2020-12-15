@@ -31,11 +31,6 @@ const EditProperty = (props) => {
       .catch((err) => {});
   }, []);
 
-  // const handlePhotoFiles = (event) => {
-  //
-  //   setPhotoFiles(event.target.files[0]);
-  // };
-
   const handlePhotoFiles = (event) => {
     setPhotoFiles(event.target.files[0]);
   };
@@ -85,88 +80,124 @@ const EditProperty = (props) => {
   }
 
   return (
-    <div>
-      <h1>EDIT</h1>
-      <form onSubmit={submit}>
-        <input type="file" name="photos" onChange={handlePhotoFiles} />
-        <input
-          type="number"
-          name="bedrooms"
-          placeholder="# of bedrooms"
-          value={propertyEdit.bedrooms}
-          onChange={handleChange}
-        />
-        <input
-          type="number"
-          name="bathrooms"
-          placeholder="# of bathrooms"
-          value={propertyEdit.bathrooms}
-          onChange={handleChange}
-        />
-        <input
-          name="listingTitle"
-          placeholder="listing title"
-          value={propertyEdit.listingTitle}
-          onChange={handleChange}
-        />
-        <textarea
-          name="description"
-          placeholder="description"
-          value={propertyEdit.description}
-          onChange={handleChange}
-        />
-        <input
-          type="number"
-          name="maxGuests"
-          placeholder="max # of guests"
-          value={propertyEdit.maxGuests}
-          onChange={handleChange}
-        />
-        <input
-          name="address"
-          placeholder="address"
-          value={propertyEdit.address}
-          onChange={handleChange}
-        />
-        <textarea
-          name="directions"
-          placeholder="directions"
-          value={propertyEdit.directions}
-          onChange={handleChange}
-        />
-        <textarea
-          name="checkinInstructions"
-          placeholder="checkin instructions"
-          value={propertyEdit.checkinInstructions}
-          onChange={handleChange}
-        />
-        <textarea
-          name="wifiDetails"
-          placeholder="wifi info"
-          value={propertyEdit.wifiDetails}
-          onChange={handleChange}
-        />
-        <input
-          name="houseManual"
-          placeholder="house manual link"
-          value={propertyEdit.houseManual}
-          onChange={handleChange}
-        />
-        <textarea
-          name="houseRules"
-          placeholder="house rules"
-          value={propertyEdit.houseRules}
-          onChange={handleChange}
-        />
-        <input
-          name="cancellationPolicy"
-          placeholder="cancellation policy"
-          value={propertyEdit.cancellationPolicy}
-          onChange={handleChange}
-        />
-        <button type="submit">Submit</button>
-      </form>
-    </div>
+    <section className="edit-property">
+      <div className="container-fluid">
+        <div className="row">
+          <div className="col-md-6">
+            <h5 className="card-title py-2">Edit property</h5>
+            <form onSubmit={submit}>
+              <div className="form-group">
+                <small>Photos</small>
+                <input type="file" name="photos" onChange={handlePhotoFiles} />
+                <small>Bedrooms</small>
+                <input
+                  className="form-control py-4"
+                  type="number"
+                  name="bedrooms"
+                  placeholder="# of bedrooms"
+                  value={propertyEdit.bedrooms}
+                  onChange={handleChange}
+                />
+                <small>Bathrooms</small>
+                <input
+                  className="form-control py-4"
+                  type="number"
+                  name="bathrooms"
+                  placeholder="# of bathrooms"
+                  value={propertyEdit.bathrooms}
+                  onChange={handleChange}
+                />
+                <small>Title</small>
+                <input
+                  className="form-control py-4"
+                  name="listingTitle"
+                  placeholder="listing title"
+                  value={propertyEdit.listingTitle}
+                  onChange={handleChange}
+                />
+                <small>Description</small>
+                <textarea
+                  className="form-control py-4"
+                  name="description"
+                  placeholder="description"
+                  value={propertyEdit.description}
+                  onChange={handleChange}
+                />
+                <small>Address</small>
+                <input
+                  className="form-control py-4"
+                  name="address"
+                  placeholder="address"
+                  value={propertyEdit.address}
+                  onChange={handleChange}
+                />
+                <small>Max guests</small>
+                <input
+                  className="form-control py-4"
+                  type="number"
+                  name="maxGuests"
+                  placeholder="max # of guests"
+                  value={propertyEdit.maxGuests}
+                  onChange={handleChange}
+                />
+                <small>Directions</small>
+                <textarea
+                  className="form-control py-4"
+                  name="directions"
+                  placeholder="directions"
+                  value={propertyEdit.directions}
+                  onChange={handleChange}
+                />
+                <small>Check in instructions</small>
+                <textarea
+                  className="form-control py-4"
+                  name="checkinInstructions"
+                  placeholder="checkin instructions"
+                  value={propertyEdit.checkinInstructions}
+                  onChange={handleChange}
+                />
+                <small>Wifi details</small>
+                <textarea
+                  className="form-control py-4"
+                  name="wifiDetails"
+                  placeholder="wifi info"
+                  value={propertyEdit.wifiDetails}
+                  onChange={handleChange}
+                />
+                <small>House manual</small>
+                <input
+                  className="form-control py-4"
+                  name="houseManual"
+                  placeholder="house manual link"
+                  value={propertyEdit.houseManual}
+                  onChange={handleChange}
+                />
+                <small>House rules</small>
+                <textarea
+                  className="form-control py-4"
+                  name="houseRules"
+                  placeholder="house rules"
+                  value={propertyEdit.houseRules}
+                  onChange={handleChange}
+                />
+                <small>Cancellation Policy</small>
+                <textarea
+                  className="form-control py-4"
+                  name="cancellationPolicy"
+                  placeholder="cancellation policy"
+                  value={propertyEdit.cancellationPolicy}
+                  onChange={handleChange}
+                />
+              </div>
+              <button className="form-control btn btn-primary text-white ">
+                Submit changes
+              </button>
+            </form>
+            <hr />
+          </div>
+        </div>
+      </div>
+    </section>
   );
 };
 

@@ -26,7 +26,7 @@ class Home extends Component {
     return (
       <section className="home">
         <div
-          className="container-fluid"
+          className="container-xl rounded"
           style={{
             backgroundImage: `url(${background})`,
             top: 0,
@@ -40,10 +40,10 @@ class Home extends Component {
             zIndex: -1,
           }}
         >
-          <div className="container">
-            <div className="row d-flex justify-content-center">
+          <div className="row d-flex justify-content-center align-items-center ">
+            <div className="col-md-6">
               <h1
-                className="text-white text-center my-5"
+                className="text-white text-center mt-5"
                 id="title"
                 style={{
                   fontFamily: 'Rock Salt, cursive',
@@ -55,84 +55,90 @@ class Home extends Component {
                 Getaways
               </h1>
             </div>
-            <div className="row d-flex justify-content-end">
-              <div className="col-sm-6">
-                <div className="card mb-4">
-                  <div className="card-body">
-                    <h5 className="card-title">
-                      Your perfect getaway is waiting for you
-                    </h5>
-                    <form id="date-picker">
+            <div className="col-md-6">
+              <div className="card my-4">
+                <div className="card-body">
+                  <h5 className="card-title">
+                    Your perfect getaway is waiting for you
+                  </h5>
+                  <form id="date-picker">
+                    <div className="form-group">
+                      <label className="mb-1">
+                        When will you be joining us?
+                      </label>
+                      <DateRangePicker
+                        withPortal
+                        block={true}
+                        orientation="verticalScrollable"
+                        minimumNights={3}
+                        withFullScreenPortal={true}
+                        numberOfMonths={4}
+                        startDate={this.state.startDate} // momentPropTypes.momentObj or null,
+                        startDateId="your_unique_start_date_id" // PropTypes.string.isRequired,
+                        endDate={this.state.endDate} // momentPropTypes.momentObj or null,
+                        endDateId="your_unique_end_date_id" // PropTypes.string.isRequired,
+                        onDatesChange={({ startDate, endDate }) =>
+                          this.setState({ startDate, endDate })
+                        } // PropTypes.func.isRequired,
+                        focusedInput={this.state.focusedInput} // PropTypes.oneOf([START_DATE, END_DATE]) or null,
+                        onFocusChange={(focusedInput) =>
+                          this.setState({ focusedInput })
+                        } // PropTypes.func.isRequired,
+                      />
                       <div className="form-group">
-                        <label className="mb-1">
-                          When will you be joining us?
-                        </label>
-                        <DateRangePicker
-                          withPortal
-                          block={true}
-                          orientation="verticalScrollable"
-                          minimumNights={3}
-                          withFullScreenPortal={true}
-                          numberOfMonths={4}
-                          startDate={this.state.startDate} // momentPropTypes.momentObj or null,
-                          startDateId="your_unique_start_date_id" // PropTypes.string.isRequired,
-                          endDate={this.state.endDate} // momentPropTypes.momentObj or null,
-                          endDateId="your_unique_end_date_id" // PropTypes.string.isRequired,
-                          onDatesChange={({ startDate, endDate }) =>
-                            this.setState({ startDate, endDate })
-                          } // PropTypes.func.isRequired,
-                          focusedInput={this.state.focusedInput} // PropTypes.oneOf([START_DATE, END_DATE]) or null,
-                          onFocusChange={(focusedInput) =>
-                            this.setState({ focusedInput })
-                          } // PropTypes.func.isRequired,
-                        />
-                        <div className="form-group">
-                          <label
-                            for="exampleFormControlSelect1"
-                            className="mt-2 mb-1"
-                          >
-                            Total Guests
-                          </label>
-                          <select
-                            className="form-control"
-                            id="exampleFormControlSelect1"
-                          >
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
-                            <option>6</option>
-                            <option>7</option>
-                            <option>8</option>
-                            <option>9</option>
-                            <option>10</option>
-                            <option>11</option>
-                            <option>12</option>
-                            <option>13</option>
-                            <option>14</option>
-                          </select>
-                        </div>
-                        <button
-                          className="btn btn-primary text-white"
-                          style={{ width: '100%' }}
+                        <label
+                          for="exampleFormControlSelect1"
+                          className="mt-2 mb-1"
                         >
-                          Search
-                        </button>
+                          Total Guests
+                        </label>
+                        <select
+                          className="form-control"
+                          id="exampleFormControlSelect1"
+                        >
+                          <option>1</option>
+                          <option>2</option>
+                          <option>3</option>
+                          <option>4</option>
+                          <option>5</option>
+                          <option>6</option>
+                          <option>7</option>
+                          <option>8</option>
+                          <option>9</option>
+                          <option>10</option>
+                          <option>11</option>
+                          <option>12</option>
+                          <option>13</option>
+                          <option>14</option>
+                        </select>
                       </div>
-                    </form>
-                  </div>
+                      <button
+                        className="btn btn-primary text-white"
+                        style={{ width: '100%' }}
+                      >
+                        Search
+                      </button>
+                    </div>
+                  </form>
                 </div>
               </div>
             </div>
           </div>
         </div>
         <div className="container-fluid container py-3 mt-4">
-          <h3>What our guests have to say about us</h3>
+          <h3 className="">What our guests have to say about us</h3>
           <div className="row mt-4">
-            <div className="col-md-4">
+            <div className="col-md-4 d-flex align-items-stretch">
               <div className="card mb-3">
-                <img src={walkerLiving} className="card-img-top" alt="..." />
+                <img
+                  src={walkerLiving}
+                  className="card-img-top"
+                  style={{
+                    height: '30vh',
+                    objectFit: 'cover',
+                  }}
+                  alt="..."
+                />
                 <div className="card-body">
                   <h5 className="card-title text-danger">
                     &#9733; &#9733; &#9733; &#9733; &#9733;
@@ -156,9 +162,17 @@ class Home extends Component {
                 </div>
               </div>
             </div>
-            <div className="col-md-4">
+            <div className="col-md-4 d-flex align-items-stretch">
               <div className="card mb-3">
-                <img src={easyPorch} className="card-img-top" alt="..." />
+                <img
+                  src={easyPorch}
+                  className="card-img-top"
+                  style={{
+                    height: '30vh',
+                    objectFit: 'cover',
+                  }}
+                  alt="..."
+                />
                 <div className="card-body">
                   <h5 className="card-title text-danger">
                     &#9733; &#9733; &#9733; &#9733; &#9733;
@@ -180,9 +194,17 @@ class Home extends Component {
                 </div>
               </div>
             </div>
-            <div className="col-md-4">
+            <div className="col-md-4 d-flex align-items-stretch">
               <div className="card mb-3">
-                <img src={walkerView} className="card-img-top" alt="..." />
+                <img
+                  src={walkerView}
+                  className="card-img-top"
+                  style={{
+                    height: '30vh',
+                    objectFit: 'cover',
+                  }}
+                  alt="..."
+                />
                 <div className="card-body">
                   <h5 className="card-title text-danger">
                     &#9733; &#9733; &#9733; &#9733; &#9733;
@@ -211,85 +233,92 @@ class Home extends Component {
               </div>
             </div>
           </div>
-          <div className="container-fluid container py-3 mt-4">
+
+          <div className="container-fluid">
+            <hr />
             <h3 className="text-dark">
               Traveling with Smoky Mountain Getaways
             </h3>
             <div className="row mt-4">
-              <div className="col-md-4">
-                <div className="card mb-3 border-0">
-                  <img
-                    src={heartGlyph}
-                    style={{ width: '3rem', height: 'auto' }}
-                    alt=""
-                  />
-                  <div className="card-body pl-0">
-                    <h5 className="card-title text-danger">
-                      Always serving you
-                    </h5>
-                    <p className="card-text">
-                      We’re here for <strong>you</strong>. Our hope is that
-                      you'll feel like you're a guest in our own home. We'll
-                      always go out of our way to make your stay as{' '}
-                      <i>memorable</i> as possible.
-                    </p>
+              <div className="col-md-4 d-flex align-items-stretch">
+                <div className="card mb-3">
+                  <div className="card-body">
+                    <img
+                      src={heartGlyph}
+                      style={{ width: '3rem', height: 'auto' }}
+                      alt=""
+                    />
+                    <div className="card-body pl-0">
+                      <h5 className="card-title text-danger">
+                        Always serving you
+                      </h5>
+                      <p className="card-text">
+                        We’re here for <strong>you</strong>. Our hope is that
+                        you'll feel like you're a guest in our own home. We'll
+                        always go out of our way to make your stay as{' '}
+                        <i>memorable</i> as possible.
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
-              <div className="col-md-4">
-                <div className="card mb-3 border-0">
-                  <img
-                    src={cabinGlyph}
-                    style={{ width: '2.9rem', height: 'auto' }}
-                    alt=""
-                  />
-                  <div className="card-body pl-0">
-                    <h5 className="card-title text-danger">
-                      Decades of hospitality
-                    </h5>
-                    <p className="card-text">
-                      We have half a century in combined hospitality experience.
-                      Our standards of cleaning and service are based on years
-                      of <strong>hard-work</strong> and{' '}
-                      <strong>dedication</strong> to the craft.
-                    </p>
+              <div className="col-md-4 d-flex align-items-stretch">
+                <div className="card mb-3 ">
+                  <div className="card-body">
+                    <img
+                      src={cabinGlyph}
+                      style={{ width: '2.9rem', height: 'auto' }}
+                      alt=""
+                    />
+                    <div className="card-body pl-0">
+                      <h5 className="card-title text-danger">
+                        Decades of hospitality
+                      </h5>
+                      <p className="card-text">
+                        We have half a century in combined hospitality
+                        experience. Our standards of cleaning and service are
+                        based on years of <strong>hard-work</strong> and{' '}
+                        <strong>dedication</strong> to the craft.
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
-              <div className="col-md-4">
-                <div className="card mb-3 border-0">
-                  <img
-                    src={serviceGlyph}
-                    style={{ width: '3.1rem', height: 'auto' }}
-                    alt=""
-                  />
-                  <div className="card-body pl-0">
-                    <h5 className="card-title text-danger">5-star hosts</h5>
-                    <p className="card-text">
-                      We have a 4.9+ star lifetime rating on Airbnb, VRBO and
-                      HomeAway. The way we see it, 5-star service should be our
-                      baseline. We strive to give just that <i>little bit</i>{' '}
-                      extra to make your time completely{' '}
-                      <strong>magical.</strong>
-                    </p>
+              <div className="col-md-4 d-flex align-items-stretch">
+                <div className="card mb-3 ">
+                  <div className="card-body">
+                    <img
+                      src={serviceGlyph}
+                      style={{ width: '3.1rem', height: 'auto' }}
+                      alt=""
+                    />
+                    <div className="card-body pl-0">
+                      <h5 className="card-title text-danger">5-star hosts</h5>
+                      <p className="card-text">
+                        We have a 4.9+ star lifetime rating on Airbnb, VRBO and
+                        HomeAway. The way we see it, 5-star service should be
+                        our baseline. We strive to give just that{' '}
+                        <i>little bit</i> extra to make your time completely{' '}
+                        <strong>magical.</strong>
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-            <div className="container-fluid container">
-              <div className="container pl-0">
-                <div className="row">
-                  <div className="col-12 pl-0 mb-2">
-                    <h2 className="h3  mt-0 mb-2">When are you traveling?</h2>
-                    <p className="mt-0 ml-0 mb-2">
-                      Add dates for updated pricing and availability.
-                    </p>
-                    <button className="btn btn-primary">
-                      <a className="text-white" href="#title">
-                        Add dates
-                      </a>
+            <hr />
+            <div className="container">
+              <div className="row">
+                <div className="col-12 pl-0 mb-2">
+                  <h2 className="h3  mt-0 mb-2">When are you traveling?</h2>
+                  <p className="mt-0 ml-0 mb-2">
+                    Add dates for updated pricing and availability.
+                  </p>
+                  <a href="#title">
+                    <button className="btn btn-primary text-white">
+                      Add dates
                     </button>
-                  </div>
+                  </a>
                 </div>
               </div>
             </div>

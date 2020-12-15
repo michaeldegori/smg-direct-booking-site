@@ -1,5 +1,6 @@
 import './App.css';
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
+import { userContext } from './contexts/User';
 import {
   Redirect,
   NavLink,
@@ -13,6 +14,8 @@ import Home from './components/Home';
 import Properties from './components/Properties';
 import PropertyDetails from './components/PropertyDetails';
 import Login from './components/Login';
+import Signup from './components/Signup';
+import ForgotPassword from './components/ForgotPassword';
 import EditProperty from './components/EditProperty';
 import AddProperty from './components/AddProperty';
 import cabinGlyph from './images/cabin-glyph.png';
@@ -22,127 +25,147 @@ import logo from './images/smg-logo-blue-cabin-only.png';
 import Button from 'react-bootstrap/Button';
 import Collapse from 'react-bootstrap/Collapse';
 
-const App = () => {
+const App = (props) => {
+  const { setUser, user } = useContext(userContext);
+
   const [open, setOpen] = useState(false);
-  // const [isLoggedIn, setIsLoggedIn] = use(false);
   const history = useHistory();
 
   const logout = () => {
+    setOpen(!open);
+    setUser(null);
     localStorage.removeItem('token');
     history.push('/home');
   };
 
-  let isLoggedIn = !!localStorage.getItem('token');
-
   return (
     <div className="App">
-      <nav className="navbar navbar-light bg-white fixed-top p-0">
-        <NavLink
-          to="/home"
-          className="navbar-brand px-4 py-2"
-          onClick={() => {
-            if (open) {
-              setOpen(!open);
-            }
-          }}
-        >
-          <img
-            className={`${open && 'burger-open'} logo`}
-            src={logo}
-            alt="smoky mountain getaways"
-          />
-        </NavLink>
-        <Button
-          className="burger rounded-pill bg-transparent border-0 px-4 py-2"
-          onClick={() => setOpen(!open)}
-          aria-controls="example-fade-text"
-          aria-expanded={open}
-        >
-          <div className={`${open && 'burger-open'} line1 rounded-pill`}></div>
-          <div className={`${open && 'burger-open'} line2 rounded-pill`}></div>
-          <div className={`${open && 'burger-open'} line3 rounded-pill`}></div>
-        </Button>
-        <Collapse in={open}>
-          <div className="navbar-collapse px-0" id="navbarNav">
+      <header>
+        <nav className="navbar navbar-expand-md navbar-default navbar-light navbar-inverse navbar-fixed-top bg-white p-0">
+          <div className="container-fluid px-0">
+            <div className="navbar-header  w-100 d-flex justify-content-between">
+              <NavLink
+                to="/home"
+                className="navbar-brand px-3 py-2"
+                onClick={() => {
+                  if (open) {
+                    setOpen(!open);
+                  }
+                }}
+              >
+                <img
+                  className={`${open && 'burger-open'} logo`}
+                  src={logo}
+                  alt="smoky mountain getaways"
+                />
+              </NavLink>
+              <Button
+                className="d-md-none burger rounded-pill bg-transparent border-0 px-3 py-2 "
+                onClick={() => setOpen(!open)}
+                aria-controls="example-fade-text"
+                aria-expanded={open}
+              >
+                <div
+                  className={`${open && 'burger-open'} line1 rounded-pill`}
+                ></div>
+                <div
+                  className={`${open && 'burger-open'} line2 rounded-pill`}
+                ></div>
+                <div
+                  className={`${open && 'burger-open'} line3 rounded-pill`}
+                ></div>
+              </Button>
+            </div>
+
             <div
-              className="bg-white pb-5 d-flex justify-content-center align-items-center"
-              style={{ minHeight: 'calc(100vmax - 100px)' }}
+              className={`${open && 'burger-open show'} ${
+                !open && 'collapse'
+              } navbar-collapse px-0 navbar-expand-lg`}
+              id="navbarNav"
             >
-              <ul className="show navbar-nav text-center">
-                <li className="nav-item my-3 active">
-                  <NavLink
-                    onClick={() => setOpen(!open)}
-                    to="/home"
-                    className="nav-link text-dark p-0"
-                    activeClassName="highlight"
-                  >
-                    Home
-                  </NavLink>
-                </li>
-                <li className="nav-item my-3">
-                  <NavLink
-                    onClick={() => setOpen(!open)}
-                    to="/properties"
-                    className="nav-link text-dark p-0"
-                    activeClassName="highlight"
-                  >
-                    Our Cabins
-                  </NavLink>
-                </li>
-                <li className="nav-item my-3">
-                  <NavLink
-                    onClick={() => setOpen(!open)}
-                    to="/about"
-                    className="nav-link text-dark p-0"
-                    activeClassName="highlight"
-                  >
-                    About Us
-                  </NavLink>
-                </li>
-                <li className="nav-item my-3">
-                  <NavLink
-                    onClick={() => setOpen(!open)}
-                    to="/users/signup"
-                    className="nav-link text-dark p-0"
-                    activeClassName="highlight"
-                  >
-                    Sign Up
-                  </NavLink>
-                </li>
-                <li className="nav-item my-3">
-                  <button className="btn btn-sm btn-primary rounded-pill text-dark py-0 px-3">
+              <div className="bg-white d-flex justify-content-center align-items-center">
+                <ul className="show navbar-nav text-center">
+                  {user ? (
+                    <li className="nav-item mb-5 active">
+                      <h5>Hey there, {user?.firstName}!</h5>
+                    </li>
+                  ) : null}
+                  <li className="nav-item my-3 active">
                     <NavLink
                       onClick={() => setOpen(!open)}
-                      to="/users/login"
-                      id="login-link"
-                      className="nav-link text-dark font-weight-bold"
-                      activeClassName="highlight"
-                    >
-                      Login
-                    </NavLink>
-                  </button>
-                </li>
-                <li className="nav-item my-3">
-                  <button className="btn btn-sm btn-danger rounded-pill text-dark py-0 px-3">
-                    <NavLink
                       to="/home"
-                      className="nav-link text-light font-weight-bold"
+                      className="nav-link text-dark p-0"
                       activeClassName="highlight"
-                      onClick={logout}
                     >
-                      Logout
+                      Home
                     </NavLink>
-                  </button>
-                </li>
-              </ul>
+                  </li>
+                  <li className="nav-item my-3">
+                    <NavLink
+                      onClick={() => setOpen(!open)}
+                      to="/properties"
+                      className="nav-link text-dark p-0"
+                      activeClassName="highlight"
+                    >
+                      Our Cabins
+                    </NavLink>
+                  </li>
+                  <li className="nav-item my-3">
+                    <NavLink
+                      onClick={() => setOpen(!open)}
+                      to="/about"
+                      className="nav-link text-dark p-0"
+                      activeClassName="highlight"
+                    >
+                      About Us
+                    </NavLink>
+                  </li>
+                  {user ? (
+                    <li className="nav-item my-3">
+                      <button className="btn btn-sm btn-danger rounded-pill text-dark py-0 px-3">
+                        <NavLink
+                          to="/home"
+                          className="nav-link text-light font-weight-bold"
+                          activeClassName="highlight"
+                          onClick={logout}
+                        >
+                          Logout
+                        </NavLink>
+                      </button>
+                    </li>
+                  ) : (
+                    <>
+                      <li className="nav-item my-3">
+                        <button className="btn btn-sm btn-primary rounded-pill text-dark py-0 px-3">
+                          <NavLink
+                            onClick={() => setOpen(!open)}
+                            to="/users/login"
+                            id="login-link"
+                            className="nav-link text-dark font-weight-bold"
+                            activeClassName="highlight"
+                          >
+                            Login
+                          </NavLink>
+                        </button>
+                      </li>
+                      <li className="nav-item my-3">
+                        <NavLink
+                          onClick={() => setOpen(!open)}
+                          to="/users/signup"
+                          className="nav-link text-dark p-0"
+                          activeClassName="highlight"
+                        >
+                          Sign Up
+                        </NavLink>
+                      </li>
+                    </>
+                  )}
+                </ul>
+              </div>
             </div>
           </div>
-        </Collapse>
-      </nav>
-      <div
-        className="navbar-spacercontainer w-100"
-        style={{ height: '51px' }}
-      ></div>
+        </nav>
+      </header>
 
       <Switch>
         <body>
@@ -169,6 +192,16 @@ const App = () => {
             exact
             path="/users/login"
             render={(props) => <Login {...props} />}
+          />
+          <Route
+            exact
+            path="/users/signup"
+            render={(props) => <Signup {...props} />}
+          />
+          <Route
+            exact
+            path="/users/forgot-password"
+            render={(props) => <ForgotPassword {...props} />}
           />
           <PrivateRoute
             exact
