@@ -4,6 +4,9 @@ import walkerLiving from '../images/walker-living.jpeg';
 import easyPorch from '../images/easy-porch.jpeg';
 import walkerView from '../images/walker-view.webp';
 import background from '../images/smoky-background.jpg';
+import cabinGlyph from '../images/cabin-glyph.png';
+import heartGlyph from '../images/heart-glyph.png';
+import serviceGlyph from '../images/service-glyph.png';
 import {
   DateRangePicker,
   DateRangePickerWrapper,
@@ -129,7 +132,7 @@ class Home extends Component {
           </div>
         </div>
         <div className="container-fluid container py-3 mt-4">
-          <h2 className="h3">What our guests have to say about us</h2>
+          <h3>What our guests have to say about us</h3>
           <div className="row mt-4">
             <div className="col-md-3">
               <div className="card mb-3">
@@ -212,8 +215,71 @@ class Home extends Component {
               </div>
             </div>
           </div>
-          <div className="container-fluid container bg-success display-1">
-            3rd section
+          <div class="container-fluid container py-3 mt-4">
+            <h3 class="text-dark">Traveling with Smoky Mountain Getaways</h3>
+            <div class="row mt-4">
+              <div class="col-md-3">
+                <div class="card mb-3 border-0">
+                  <img
+                    src={heartGlyph}
+                    style={{ width: '3rem', height: 'auto' }}
+                    alt=""
+                  />
+                  <div class="card-body pl-0">
+                    <h5 class="card-title text-danger">Always serving you</h5>
+                    <p class="card-text">
+                      We’re here for <strong>you</strong>. Our hope is that
+                      you'll feel like you're a guest in our own home. We'll
+                      always go out of our way to make your stay as{' '}
+                      <i>memorable</i> as possible.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-3">
+                <div class="card mb-3 border-0">
+                  <img
+                    src={cabinGlyph}
+                    style={{ width: '3rem', height: 'auto' }}
+                    alt=""
+                  />
+                  <div class="card-body pl-0">
+                    <h5 class="card-title text-danger">
+                      Decades of hospitality
+                    </h5>
+                    <p class="card-text">
+                      We have half a century in combined hospitality experience.
+                      Our standards of cleaning and service are based on years
+                      of <strong>hard-work</strong> and{' '}
+                      <strong>dedication</strong> to the craft.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-3">
+                <div class="card mb-3 border-0">
+                  <img
+                    src={serviceGlyph}
+                    style={{ width: '3rem', height: 'auto' }}
+                    alt=""
+                  />
+                  <g fill-rule="evenodd" clip-rule="evenodd">
+                    <path d="M9 17l3-2.94c-.39-.04-.68-.06-1-.06-2.67 0-8 1.34-8 4v2h9l-3-3zm2-5c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4" />
+                    <path d="M15.47 20.5L12 17l1.4-1.41 2.07 2.08 5.13-5.17 1.4 1.41z" />
+                  </g>
+                  <div class="card-body pl-0">
+                    <h5 class="card-title text-danger">5-star hosts</h5>
+                    <p class="card-text">
+                      We have a 4.93-star lifetime rating on Airbnb, VRBO and
+                      HomeAway. The way we see it, 5-star service should be our
+                      baseline. We strive to give just that <i>little bit</i>{' '}
+                      extra to make your time completely{' '}
+                      <strong>magical.</strong>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
