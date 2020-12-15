@@ -49,6 +49,7 @@ class Home extends Component {
             <div className="row d-flex justify-content-center">
               <h1
                 className="text-white text-center my-5"
+                id="title"
                 style={{
                   fontFamily: 'Rock Salt, cursive',
                   lineHeight: '3.5rem',
@@ -66,7 +67,7 @@ class Home extends Component {
                     <h5 className="card-title">
                       Your perfect getaway is waiting for you
                     </h5>
-                    <form>
+                    <form id="date-picker">
                       <div className="form-group">
                         <label className="mb-1">
                           When will you be joining us?
@@ -98,7 +99,7 @@ class Home extends Component {
                             Total Guests
                           </label>
                           <select
-                            class="form-control"
+                            className="form-control"
                             id="exampleFormControlSelect1"
                           >
                             <option>1</option>
@@ -138,11 +139,11 @@ class Home extends Component {
               <div className="card mb-3">
                 <img src={walkerLiving} className="card-img-top" alt="..." />
                 <div className="card-body">
-                  <h5 class="card-title text-danger">
+                  <h5 className="card-title text-danger">
                     &#9733; &#9733; &#9733; &#9733; &#9733;
                   </h5>
                   <p className="card-text">
-                    Awesome! Amazing! Beautiful! I cannot say enough about this
+                    "Awesome! Amazing! Beautiful! I cannot say enough about this
                     cabin and our long weekend in the mountains. This cabin had
                     anything and everything that we needed. It was immaculate
                     and smelled so good when we walked inside. We loved it and
@@ -150,7 +151,7 @@ class Home extends Component {
                     want. We made a couple of trips to the Pigeon Forge Island,
                     which by the way, was AMAZING!!! I would definitely
                     recommend this cabin and my whole family agreed this will be
-                    a family tradition. Great host also.
+                    a family tradition. Great hosts also."
                   </p>
                   <p className="card-text">
                     <small className="text-muted">
@@ -164,17 +165,17 @@ class Home extends Component {
               <div className="card mb-3">
                 <img src={easyPorch} className="card-img-top" alt="..." />
                 <div className="card-body">
-                  <h5 class="card-title text-danger">
+                  <h5 className="card-title text-danger">
                     &#9733; &#9733; &#9733; &#9733; &#9733;
                   </h5>
                   <p className="card-text">
-                    We really enjoyed our stay, Michael is very responsive and
+                    "We really enjoyed our stay, Michael is very responsive and
                     helped us immediately for whatever we asked. Cabin has lot
                     of amenities and location is one of the best. It has lot of
                     space for recreational activities and stunning view from all
                     the sides. It's very clean and exactly as shown in the pics.
                     We will definitely book other properties offered by Michael
-                    and will book this whenever we visit Smokey mountain again.
+                    and will book this whenever we visit Smokey mountain again."
                   </p>
                   <p className="card-text">
                     <small className="text-muted">
@@ -188,11 +189,11 @@ class Home extends Component {
               <div className="card mb-3">
                 <img src={walkerView} className="card-img-top" alt="..." />
                 <div className="card-body">
-                  <h5 class="card-title text-danger">
+                  <h5 className="card-title text-danger">
                     &#9733; &#9733; &#9733; &#9733; &#9733;
                   </h5>
                   <p className="card-text">
-                    This was a great place to stay. A short drive to
+                    "This was a great place to stay. A short drive to
                     entertainment, food, entertainment, and of course, the
                     National Park. We really enjoyed the option of eating
                     breakfast and dinner here and saving a few extra dollars for
@@ -204,7 +205,7 @@ class Home extends Component {
                     couple's get-away and also had a nice collection of games
                     for family time. The hot tub and gas grill were nice
                     touches. When we come back to this area we will certainly
-                    stay here again. Thanks Michael and Debra!
+                    stay here again. Thanks Michael and Debra!""
                   </p>
                   <p className="card-text">
                     <small className="text-muted">
@@ -215,19 +216,23 @@ class Home extends Component {
               </div>
             </div>
           </div>
-          <div class="container-fluid container py-3 mt-4">
-            <h3 class="text-dark">Traveling with Smoky Mountain Getaways</h3>
-            <div class="row mt-4">
-              <div class="col-md-3">
-                <div class="card mb-3 border-0">
+          <div className="container-fluid container py-3 mt-4">
+            <h3 className="text-dark">
+              Traveling with Smoky Mountain Getaways
+            </h3>
+            <div className="row mt-4">
+              <div className="col-md-3">
+                <div className="card mb-3 border-0">
                   <img
                     src={heartGlyph}
                     style={{ width: '3rem', height: 'auto' }}
                     alt=""
                   />
-                  <div class="card-body pl-0">
-                    <h5 class="card-title text-danger">Always serving you</h5>
-                    <p class="card-text">
+                  <div className="card-body pl-0">
+                    <h5 className="card-title text-danger">
+                      Always serving you
+                    </h5>
+                    <p className="card-text">
                       We’re here for <strong>you</strong>. Our hope is that
                       you'll feel like you're a guest in our own home. We'll
                       always go out of our way to make your stay as{' '}
@@ -236,18 +241,18 @@ class Home extends Component {
                   </div>
                 </div>
               </div>
-              <div class="col-md-3">
-                <div class="card mb-3 border-0">
+              <div className="col-md-3">
+                <div className="card mb-3 border-0">
                   <img
                     src={cabinGlyph}
                     style={{ width: '3rem', height: 'auto' }}
                     alt=""
                   />
-                  <div class="card-body pl-0">
-                    <h5 class="card-title text-danger">
+                  <div className="card-body pl-0">
+                    <h5 className="card-title text-danger">
                       Decades of hospitality
                     </h5>
-                    <p class="card-text">
+                    <p className="card-text">
                       We have half a century in combined hospitality experience.
                       Our standards of cleaning and service are based on years
                       of <strong>hard-work</strong> and{' '}
@@ -256,8 +261,8 @@ class Home extends Component {
                   </div>
                 </div>
               </div>
-              <div class="col-md-3">
-                <div class="card mb-3 border-0">
+              <div className="col-md-3">
+                <div className="card mb-3 border-0">
                   <img
                     src={serviceGlyph}
                     style={{ width: '3rem', height: 'auto' }}
@@ -267,15 +272,32 @@ class Home extends Component {
                     <path d="M9 17l3-2.94c-.39-.04-.68-.06-1-.06-2.67 0-8 1.34-8 4v2h9l-3-3zm2-5c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4" />
                     <path d="M15.47 20.5L12 17l1.4-1.41 2.07 2.08 5.13-5.17 1.4 1.41z" />
                   </g>
-                  <div class="card-body pl-0">
-                    <h5 class="card-title text-danger">5-star hosts</h5>
-                    <p class="card-text">
+                  <div className="card-body pl-0">
+                    <h5 className="card-title text-danger">5-star hosts</h5>
+                    <p className="card-text">
                       We have a 4.93-star lifetime rating on Airbnb, VRBO and
                       HomeAway. The way we see it, 5-star service should be our
                       baseline. We strive to give just that <i>little bit</i>{' '}
                       extra to make your time completely{' '}
                       <strong>magical.</strong>
                     </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="container-fluid container">
+              <div className="container pl-0">
+                <div className="row">
+                  <div className="col-12 pl-0 mb-2">
+                    <h2 className="h3  mt-0 mb-2">When are you traveling?</h2>
+                    <p className="mt-0 ml-0 mb-2">
+                      Add dates for updated pricing and availability.
+                    </p>
+                    <button className="btn btn-primary">
+                      <a className="text-white" href="#title">
+                        Add dates
+                      </a>
+                    </button>
                   </div>
                 </div>
               </div>
