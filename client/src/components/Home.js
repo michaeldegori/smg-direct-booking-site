@@ -125,7 +125,7 @@ class Home extends Component {
             </div>
           </div>
         </div>
-        <div className="container-fluid container py-3 mt-4">
+        <div className="container-xl container py-3 mt-4">
           <h3 className="">What our guests have to say about us</h3>
           <div className="row mt-4">
             <div className="col-md-4 d-flex align-items-stretch">
