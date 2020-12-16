@@ -94,7 +94,7 @@ const App = (props) => {
               >
                 <ul
                   className="show navbar-nav text-center d-flex justify-content-between align-items-center"
-                  style={{ width: '600px' }}
+                  style={{ width: '500px' }}
                 >
                   {user ? (
                     <li className="nav-item mb-5 active">
@@ -179,47 +179,45 @@ const App = (props) => {
       </header>
 
       <Switch>
-        <body>
-          <Route exact path="/">
-            <Redirect to="/home" />
-          </Route>
-          <Route exact path="/home" render={(props) => <Home {...props} />} />
-          <Route
-            exact
-            path="/properties"
-            render={(props) => <Properties {...props} />}
-          />
-          <PrivateRoute
-            exact
-            path="/properties/add"
-            render={(props) => <AddProperty {...props} />}
-          />
-          <Route
-            exact
-            path="/properties/:id"
-            render={(props) => <PropertyDetails {...props} />}
-          />
-          <Route
-            exact
-            path="/users/login"
-            render={(props) => <Login {...props} />}
-          />
-          <Route
-            exact
-            path="/users/signup"
-            render={(props) => <Signup {...props} />}
-          />
-          <Route
-            exact
-            path="/users/forgot-password"
-            render={(props) => <ForgotPassword {...props} />}
-          />
-          <PrivateRoute
-            exact
-            path="/properties/edit/:id"
-            render={(props) => <EditProperty {...props} />}
-          />
-        </body>
+        <Route exact path="/">
+          <Redirect to="/home" />
+        </Route>
+        <Route exact path="/home" render={(props) => <Home {...props} />} />
+        <Route
+          exact
+          path="/properties"
+          render={(props) => <Properties {...props} />}
+        />
+        <PrivateRoute
+          exact
+          path="/properties/add"
+          render={(props) => <AddProperty {...props} />}
+        />
+        <Route
+          exact
+          path="/properties/:id"
+          render={(props) => <PropertyDetails {...props} />}
+        />
+        <Route
+          exact
+          path="/users/login"
+          render={(props) => <Login {...props} />}
+        />
+        <Route
+          exact
+          path="/users/signup"
+          render={(props) => <Signup {...props} />}
+        />
+        <Route
+          exact
+          path="/users/forgot-password"
+          render={(props) => <ForgotPassword {...props} />}
+        />
+        <PrivateRoute
+          exact
+          path="/properties/edit/:id"
+          render={(props) => <EditProperty {...props} />}
+        />
       </Switch>
 
       <div className="container w-100" style={{ height: '51px' }}></div>

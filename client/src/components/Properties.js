@@ -63,7 +63,7 @@ const Properties = (props) => {
 
   return (
     <section className="properites">
-      <div className="container-fluid py-3">
+      <div className="container-xl py-3">
         <h3 className="text-dark">Our properties</h3>
         <div className="row mt-4">
           {listProperties()}{' '}

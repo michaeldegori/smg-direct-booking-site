@@ -34,10 +34,7 @@ router.post('/login', (req, res) => {
       bcrypt.compare(req.body.password, user.password, function (err, match) {
         if (err) res.status(500).send('Invalid Password');
         if (match) {
-          const token = jwt.sign(
-            { id: user._id },
-            'SQn!.JF#rG9D5,a>;+_m-hwKWB<S.#($xV^YQQ+KLxSrc{@qvjq(GLC!Cy<q})^'
-          );
+          const token = jwt.sign({ id: user._id }, process.env.token);
           res.json({
             token: token,
             user: {

@@ -13,6 +13,7 @@ const Signup = () => {
     firstName: '',
     lastName: '',
     birthdate: Date.now(),
+    phone: null,
     email: '',
     password: '',
   });
@@ -86,6 +87,17 @@ const Signup = () => {
                     You must be 25 or over to book with us. Other people won't
                     see your birthday.
                   </small>
+                </div>
+                <div className="form-group">
+                  <input
+                    className="form-control py-4"
+                    type="tel"
+                    name="phone"
+                    placeholder="Phone"
+                    value={userSignup.phone}
+                    onChange={handleChange}
+                  />
+                  <small>U.S. phone numbers only, please.</small>
                 </div>
                 <div className="form-group">
                   <input
